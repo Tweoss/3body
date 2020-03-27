@@ -18,7 +18,7 @@ function draw(){
     ctx.arc(sphere[i].x, sphere[i].y, sphere[i].r, 0, 2 * Math.PI);
     ctx.fill();
   }
-  sphere[i].x++;
+  sphere[0].x = sphere[0].x+1;
   requestAnimationFrame(draw);
 }
 draw();
