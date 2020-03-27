@@ -19,9 +19,9 @@ function draw(){
     ctx.arc(sphere[i].x, sphere[i].y, sphere[i].r, 0, 2 * Math.PI);
     ctx.fill();
     sphere[i].x += sphere[i].xdir/1000;
-    console.log(i,'x',sphere[i].x)
+    console.log(i,'x',sphere[i].x);
     sphere[i].y += sphere[i].ydir/1000;
-    console.log(i,'y',sphere[i].y)
+    console.log(i,'y',sphere[i].y);
   }
 
 //G=1
@@ -37,6 +37,11 @@ function draw(){
     sphere[2].xdir += -100*(sphere[2].x-sphere[1].x)/Math.pow(Math.pow((sphere[2].x-sphere[1].x),2)+Math.pow((sphere[2].y-sphere[1].y),2)+Math.pow((sphere[2].z-sphere[1].z),2),1.5)-400*(sphere[2].x-sphere[0].x)/Math.pow(Math.pow((sphere[2].x-sphere[0].x),2)+Math.pow((sphere[2].y-sphere[0].y),2)+Math.pow((sphere[2].z-sphere[0].z),2),1.5);
     sphere[2].ydir += -100*(sphere[2].y-sphere[1].y)/Math.pow(Math.pow((sphere[2].x-sphere[1].x),2)+Math.pow((sphere[2].y-sphere[1].y),2)+Math.pow((sphere[2].z-sphere[1].z),2),1.5)-400*(sphere[2].y-sphere[0].y)/Math.pow(Math.pow((sphere[2].x-sphere[0].x),2)+Math.pow((sphere[2].y-sphere[0].y),2)+Math.pow((sphere[2].z-sphere[0].z),2),1.5);
     sphere[2].zdir += -100*(sphere[2].z-sphere[1].z)/Math.pow(Math.pow((sphere[2].x-sphere[1].x),2)+Math.pow((sphere[2].y-sphere[1].y),2)+Math.pow((sphere[2].z-sphere[1].z),2),1.5)-400*(sphere[2].z-sphere[0].z)/Math.pow(Math.pow((sphere[2].x-sphere[0].x),2)+Math.pow((sphere[2].y-sphere[0].y),2)+Math.pow((sphere[2].z-sphere[0].z),2),1.5);
+    for (i=0; i < 3; i++){
+      console.log(i,'xdir',sphere[i].xdir);
+      console.log(i,'ydir',sphere[i].ydir);
+      console.log(i,'zdir',sphere[i].zdir);
+    }
 
 
   requestAnimationFrame(draw);
