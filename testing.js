@@ -10,7 +10,7 @@ var sphere = [
 
 ctx.fillStyle = "#000000";
 
-
+console.log('y',Number(sphere[0]).y);
 function draw(){
   ctx.clearRect(0, 0, 400, 400);
 
@@ -26,6 +26,7 @@ function draw(){
 
 //G=1
 
+
     sphere[0].xdir += -400*(sphere[0].x-sphere[1].x)/Math.pow(Math.pow((sphere[0].x-sphere[1].x),2)+Math.pow((sphere[0].y-sphere[1].y),2)+Math.pow((sphere[0].z-sphere[1].z),2),1.5)-1600*(sphere[0].x-sphere[2].x)/Math.pow(Math.pow((sphere[0].x-sphere[2].x),2)+Math.pow((sphere[0].y-sphere[2].y),2)+Math.pow((sphere[0].z-sphere[2].z),2),1.5);
     sphere[0].ydir += -400*(sphere[0].y-sphere[1].y)/Math.pow(Math.pow((sphere[0].x-sphere[1].x),2)+Math.pow((sphere[0].y-sphere[1].y),2)+Math.pow((sphere[0].z-sphere[1].z),2),1.5)-1600*(sphere[0].y-sphere[2].y)/Math.pow(Math.pow((sphere[0].x-sphere[2].x),2)+Math.pow((sphere[0].y-sphere[2].y),2)+Math.pow((sphere[0].z-sphere[2].z),2),1.5);
     sphere[0].zdir += -400*(sphere[0].z-sphere[1].z)/Math.pow(Math.pow((sphere[0].x-sphere[1].x),2)+Math.pow((sphere[0].y-sphere[1].y),2)+Math.pow((sphere[0].z-sphere[1].z),2),1.5)-1600*(sphere[0].z-sphere[2].z)/Math.pow(Math.pow((sphere[0].x-sphere[2].x),2)+Math.pow((sphere[0].y-sphere[2].y),2)+Math.pow((sphere[0].z-sphere[2].z),2),1.5);
@@ -38,7 +39,7 @@ function draw(){
     sphere[2].ydir += -100*(sphere[2].y-sphere[1].y)/Math.pow(Math.pow((sphere[2].x-sphere[1].x),2)+Math.pow((sphere[2].y-sphere[1].y),2)+Math.pow((sphere[2].z-sphere[1].z),2),1.5)-400*(sphere[2].y-sphere[0].y)/Math.pow(Math.pow((sphere[2].x-sphere[0].x),2)+Math.pow((sphere[2].y-sphere[0].y),2)+Math.pow((sphere[2].z-sphere[0].z),2),1.5);
     sphere[2].zdir += -100*(sphere[2].z-sphere[1].z)/Math.pow(Math.pow((sphere[2].x-sphere[1].x),2)+Math.pow((sphere[2].y-sphere[1].y),2)+Math.pow((sphere[2].z-sphere[1].z),2),1.5)-400*(sphere[2].z-sphere[0].z)/Math.pow(Math.pow((sphere[2].x-sphere[0].x),2)+Math.pow((sphere[2].y-sphere[0].y),2)+Math.pow((sphere[2].z-sphere[0].z),2),1.5);
 
-    console.log('Nan???',Math.pow(Number(sphere[0].xdir),2));
+    //console.log('Nan???',Math.pow(Number(sphere[0].xdir),2));
 
     /*for (i=0; i < 3; i++){
       console.log(i,'xdir',sphere[i].xdir);
