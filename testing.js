@@ -19,9 +19,9 @@ function draw(){
     ctx.arc(sphere[i].x, sphere[i].y, sphere[i].r, 0, 2 * Math.PI);
     ctx.fill();
     sphere[i].x += sphere[i].xdir/1000;
-    console.log(sphere[i].x)
+    console.log(i,x,sphere[i].x)
     sphere[i].y += sphere[i].ydir/1000;
-    console.log(sphere[i].y)
+    console.log(i,y,sphere[i].y)
   }
 
 //G=1
