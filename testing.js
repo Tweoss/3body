@@ -18,8 +18,8 @@ function draw(){
     ctx.beginPath();
     ctx.arc(sphere[i].x, sphere[i].y, sphere[i].r, 0, 2 * Math.PI);
     ctx.fill();
-    sphere[i].x += sphere[i].xdir/100;
-    sphere[i].y += sphere[i].ydir/100;
+    sphere[i].x += sphere[i].xdir/1000;
+    sphere[i].y += sphere[i].ydir/1000;
   }
 
 //G=1
