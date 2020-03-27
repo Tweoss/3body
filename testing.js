@@ -37,6 +37,9 @@ function draw(){
     sphere[2].xdir += -100*(sphere[2].x-sphere[1].x)/Math.pow(Math.pow((sphere[2].x-sphere[1].x),2)+Math.pow((sphere[2].y-sphere[1].y),2)+Math.pow((sphere[2].z-sphere[1].z),2),1.5)-400*(sphere[2].x-sphere[0].x)/Math.pow(Math.pow((sphere[2].x-sphere[0].x),2)+Math.pow((sphere[2].y-sphere[0].y),2)+Math.pow((sphere[2].z-sphere[0].z),2),1.5);
     sphere[2].ydir += -100*(sphere[2].y-sphere[1].y)/Math.pow(Math.pow((sphere[2].x-sphere[1].x),2)+Math.pow((sphere[2].y-sphere[1].y),2)+Math.pow((sphere[2].z-sphere[1].z),2),1.5)-400*(sphere[2].y-sphere[0].y)/Math.pow(Math.pow((sphere[2].x-sphere[0].x),2)+Math.pow((sphere[2].y-sphere[0].y),2)+Math.pow((sphere[2].z-sphere[0].z),2),1.5);
     sphere[2].zdir += -100*(sphere[2].z-sphere[1].z)/Math.pow(Math.pow((sphere[2].x-sphere[1].x),2)+Math.pow((sphere[2].y-sphere[1].y),2)+Math.pow((sphere[2].z-sphere[1].z),2),1.5)-400*(sphere[2].z-sphere[0].z)/Math.pow(Math.pow((sphere[2].x-sphere[0].x),2)+Math.pow((sphere[2].y-sphere[0].y),2)+Math.pow((sphere[2].z-sphere[0].z),2),1.5);
+
+    console.log('Nan???',Math.pow(sphere[i0].xdir,2));
+
     for (i=0; i < 3; i++){
       console.log(i,'xdir',sphere[i].xdir);
       console.log(i,'ydir',sphere[i].ydir);
