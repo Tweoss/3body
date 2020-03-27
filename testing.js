@@ -8,7 +8,7 @@
     {x:100, y:60, xdir:0,ydir:0,r:36},
   ];
 
-  ctx.fillStyle = "#FFFFFF";
+  ctx.fillStyle = "#000000";
 
   for (i = 0; i < 3; i++) {
     ctx.beginPath();
