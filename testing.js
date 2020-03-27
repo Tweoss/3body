@@ -9,7 +9,7 @@ var sphere = [
 ];
 
 ctx.fillStyle = "#000000";
-console.log(Object.keys(ctx));
+
 
 function draw(){
   ctx.clearRect(0, 0, 400, 400);
@@ -19,7 +19,9 @@ function draw(){
     ctx.arc(sphere[i].x, sphere[i].y, sphere[i].r, 0, 2 * Math.PI);
     ctx.fill();
     sphere[i].x += sphere[i].xdir/1000;
+    console.log(sphere[i].x)
     sphere[i].y += sphere[i].ydir/1000;
+    console.log(sphere[i].y)
   }
 
 //G=1
