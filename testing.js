@@ -1,9 +1,8 @@
 
   var canvas = document.getElementById("myCanvas");
   var ctx = canvas.getContext("2d");
-
-  ctx.fillStyle = "#FFFFFF";
   ctx.beginPath();
+  ctx.fillStyle = "#FFFFFF";
   ctx.arc(100, 75, 16, 0, 2 * Math.PI);
   ctx.fill();
   ctx.fillStyle = "#F0F0FF";
