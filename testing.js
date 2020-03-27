@@ -12,5 +12,5 @@
 
   ctx.beginPath();
   ctx.fillStyle = "#00FFFF";
-  ctx.arc(300, 100, 36, 0, 2 * Math.PI);
+  ctx.arc(200, 100, 36, 0, 2 * Math.PI);
   ctx.fill();
