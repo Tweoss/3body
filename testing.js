@@ -1,16 +1,17 @@
 
   var canvas = document.getElementById("myCanvas");
   var ctx = canvas.getContext("2d");
-  ctx.beginPath();
-  ctx.fillStyle = "#FFFFFF";
-  ctx.arc(100, 75, 16, 0, 2 * Math.PI);
-  ctx.fill();
-  ctx.fillStyle = "#F0F0FF";
-  ctx.beginPath();
-  ctx.arc(200, 50, 25, 0, 2 * Math.PI);
-  ctx.fill();
+  var i;
+  var sphere = [
+    {x:20, y:20, xdir:0,ydir:0,r:16},
+    {x:40, y:100, xdir:0,ydir:0,r:25},
+    {x:100, y:60, xdir:0,ydir:0,r:36},
+  ];
 
-  ctx.beginPath();
-  ctx.fillStyle = "#00FFFF";
-  ctx.arc(200, 100, 36, 0, 2 * Math.PI);
-  ctx.fill();
+  ctx.fillStyle = "#FFFFFF";
+
+  for (i = 0; i < 3; i++) {
+    ctx.beginPath();
+    ctx.arc(sphere[i].x, sphere[i].y, sphere[i].r, 0, 2 * Math.PI);
+    ctx.fill();
+  }
