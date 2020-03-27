@@ -63,35 +63,28 @@ tr:nth-child(even) {
     <td>Italy</td>
   </tr>
 </table>
-<input type="button" value="Add 1">
 
-<canvas id="myCanvas" height="400" width="400" style="border:1px solid #000000;"></canvas>
-
+<canvas id="myCanvas" height="400" width="400" style="border:1px solid #000000;"> </canvas>
 
 <script>
-    //useless again
-var button = document.querySelector('input[type="button"]');
-var range = document.querySelector('input[type="range"]');
-var rate = document.querySelector('.rate');
 
-range.oninput = function() {
-  rate.textContent = range.value;
-  button.value = 'Add ' + range.value
-}
-button.onclick = function() {
-	document.getElementById('Head').innerHTML = Number(document.getElementById('Head').innerHTML)+Number(range.value);
-}
+  var button = document.querySelector('input[type="button"]');
+  var range = document.querySelector('input[type="range"]');
+  var rate = document.querySelector('.rate');
 
-window.onload = function() {
- document.getElementById('Head').innerHTML = 3;
+  range.oninput = function() {
+    rate.textContent = range.value;
+    button.value = 'Add ' + range.value
+  }
+  button.onclick = function() {
+	  document.getElementById('Head').innerHTML = Number(document.getElementById('Head').innerHTML)+Number(range.value);
+  }
 
- var name = prompt("What's your name?");
-
-
-  document.getElementById('Name').innerHTML = name;
-
-};
-
+  window.onload = function() {
+    document.getElementById('Head').innerHTML = 3;
+    var name = prompt("What's your name?");
+    document.getElementById('Name').innerHTML = name;
+  };
 
 </script>
 
