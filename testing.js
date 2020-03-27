@@ -10,7 +10,7 @@ var sphere = [
 
 ctx.fillStyle = "#000000";
 
-console.log('y',Number(sphere[0]).y);
+console.log('y',Number(sphere[0].y));
 function draw(){
   ctx.clearRect(0, 0, 400, 400);
 
