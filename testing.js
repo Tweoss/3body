@@ -10,8 +10,7 @@ var circle = [
 
 ctx.fillStyle = "#000000";
 
-var xee = typeof(circle[0].x);
-console.log(xee);
+
 /*
 alert(-400*(circle[0].x-circle[1].x)/(Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2),3))));
 alert(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2));//Nan
@@ -30,9 +29,14 @@ alert(circle[0].x-circle[1].x);//-20
 alert(circle[0].x);//20
 */
 
+var j = 0;
 
 function draw(){
   ctx.clearRect(0, 0, 400, 400);
+
+  j++;
+
+
 
   for (i = 0; i < 3; i++) {
     ctx.beginPath();
@@ -42,9 +46,12 @@ function draw(){
   //  console.log(i,'x',circle[i].x);
     circle[i].y += circle[i].ydir/100;
     //console.log(i,'y',circle[i].y);
+    if (j<1000){
+      console.log(j,i,circle[i]);
+    }
   }
 
-  console.log(circle[0]);
+
 
   //alert('circle' + circle[0].x + Math.sqrt(Math.pow(circle[0].x,3)));
 
