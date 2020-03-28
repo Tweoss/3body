@@ -12,7 +12,7 @@ ctx.fillStyle = "#000000";
 
 var xee = typeof(circle[0].x);
 console.log(xee);
-i = 0;
+var j = 0;
 function draw(){
   ctx.clearRect(0, 0, 400, 400);
   console.log(circle[0]);
@@ -28,8 +28,8 @@ function draw(){
 
 //G=1
 
-  alert(i);
-  i++;
+  alert(j);
+  j++;
 
     circle[0].xdir +=  -400*(circle[0].x-circle[1].x)/Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2)+Math.pow(circle[0].z-circle[1].z,2),1.5)-1600*(circle[0].x-circle[2].x)/Math.pow(Math.pow(circle[0].x-circle[2].x,2)+Math.pow(circle[0].y-circle[2].y,2)+Math.pow(circle[0].z-circle[2].z,2),1.5);
     circle[0].ydir +=  -400*(circle[0].y-circle[1].y)/Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2)+Math.pow(circle[0].z-circle[1].z,2),1.5)-1600*(circle[0].y-circle[2].y)/Math.pow(Math.pow(circle[0].x-circle[2].x,2)+Math.pow(circle[0].y-circle[2].y,2)+Math.pow(circle[0].z-circle[2].z,2),1.5);
