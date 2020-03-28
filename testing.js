@@ -13,9 +13,11 @@ ctx.fillStyle = "#000000";
 var xee = typeof(circle[0].x);
 console.log(xee);
 var j = 0;
+
+
 function draw(){
   ctx.clearRect(0, 0, 400, 400);
-  console.log(circle[0]);
+
   for (i = 0; i < 3; i++) {
     ctx.beginPath();
     ctx.arc(circle[i].x, circle[i].y, circle[i].r, 0, 2 * Math.PI);
@@ -28,6 +30,7 @@ function draw(){
 
 //G=1
 
+  console.log(circle[0]);
   alert(j);
   j++;
 
