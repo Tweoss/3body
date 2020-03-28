@@ -50,9 +50,9 @@ function draw(){
     ctx.beginPath();
     ctx.arc(circle[i].x, circle[i].y, circle[i].r, 0, 2 * Math.PI);
     ctx.fill();
-    circle[i].x += circle[i].xdir/100;
+    circle[i].x += circle[i].xdir;
   //  console.log(i,'x',circle[i].x);
-    circle[i].y += circle[i].ydir/100;
+    circle[i].y += circle[i].ydir;
     //console.log(i,'y',circle[i].y);
     if (j<1000){
       //console.log(j,i,circle[i]);
