@@ -15,7 +15,7 @@ console.log(xee);
 
 function draw(){
   ctx.clearRect(0, 0, 400, 400);
-
+  console.log(circle[0]);
   for (i = 0; i < 3; i++) {
     ctx.beginPath();
     ctx.arc(circle[i].x, circle[i].y, circle[i].r, 0, 2 * Math.PI);
@@ -28,7 +28,7 @@ function draw(){
 
 //G=1
 
-alert(-400*(circle[0].z-circle[1].z)/Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2)+Math.pow(circle[0].z-circle[1].z,2),1.5))
+alert(-400*(circle[0].z-circle[1].z)/Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2)+Math.pow(circle[0].z-circle[1].z,2),1.5));
 
     circle[0].xdir +=  -400*(circle[0].x-circle[1].x)/Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2)+Math.pow(circle[0].z-circle[1].z,2),1.5)-1600*(circle[0].x-circle[2].x)/Math.pow(Math.pow(circle[0].x-circle[2].x,2)+Math.pow(circle[0].y-circle[2].y,2)+Math.pow(circle[0].z-circle[2].z,2),1.5);
     circle[0].ydir +=  -400*(circle[0].y-circle[1].y)/Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2)+Math.pow(circle[0].z-circle[1].z,2),1.5)-1600*(circle[0].y-circle[2].y)/Math.pow(Math.pow(circle[0].x-circle[2].x,2)+Math.pow(circle[0].y-circle[2].y,2)+Math.pow(circle[0].z-circle[2].z,2),1.5);
@@ -48,7 +48,6 @@ alert(-400*(circle[0].z-circle[1].z)/Math.pow(Math.pow(circle[0].x-circle[1].x,2
       console.log(i,'ydir',circle[i].ydir);
       console.log(i,'zdir',circle[i].zdir);
     }*/
-    console.log(Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2)+Math.pow(circle[0].z-circle[1].z,2),1.5));
 
 
   requestAnimationFrame(draw);
