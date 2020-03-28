@@ -28,7 +28,7 @@ function draw(){
 
 //G=1
 
-    console.log(typeof(-400*(circle[0].x-circle[1].x)/Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2)+Math.pow(circle[0].z-circle[1].z,2),1.5)-1600*(circle[0].x-circle[2].x)/Math.pow(Math.pow(circle[0].x-circle[2].x,2)+Math.pow(circle[0].y-circle[2].y,2)+Math.pow(circle[0].z-circle[2].z,2),1.5)))
+
     circle[0].xdir +=  -400*(circle[0].x-circle[1].x)/Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2)+Math.pow(circle[0].z-circle[1].z,2),1.5)-1600*(circle[0].x-circle[2].x)/Math.pow(Math.pow(circle[0].x-circle[2].x,2)+Math.pow(circle[0].y-circle[2].y,2)+Math.pow(circle[0].z-circle[2].z,2),1.5);
     circle[0].ydir +=  -400*(circle[0].y-circle[1].y)/Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2)+Math.pow(circle[0].z-circle[1].z,2),1.5)-1600*(circle[0].y-circle[2].y)/Math.pow(Math.pow(circle[0].x-circle[2].x,2)+Math.pow(circle[0].y-circle[2].y,2)+Math.pow(circle[0].z-circle[2].z,2),1.5);
     circle[0].zdir +=  -400*(circle[0].z-circle[1].z)/Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2)+Math.pow(circle[0].z-circle[1].z,2),1.5)-1600*(circle[0].z-circle[2].z)/Math.pow(Math.pow(circle[0].x-circle[2].x,2)+Math.pow(circle[0].y-circle[2].y,2)+Math.pow(circle[0].z-circle[2].z,2),1.5);
@@ -41,12 +41,13 @@ function draw(){
     circle[2].ydir +=  -100*(circle[2].y-circle[1].y)/Math.pow(Math.pow(circle[2].x-circle[1].x,2)+Math.pow(circle[2].y-circle[1].y,2)+Math.pow(circle[2].z-circle[1].z,2),1.5)- 400*(circle[2].y-circle[0].y)/Math.pow(Math.pow(circle[2].x-circle[0].x,2)+Math.pow(circle[2].y-circle[0].y,2)+Math.pow(circle[2].z-circle[0].z,2),1.5);
     circle[2].zdir +=  -100*(circle[2].z-circle[1].z)/Math.pow(Math.pow(circle[2].x-circle[1].x,2)+Math.pow(circle[2].y-circle[1].y,2)+Math.pow(circle[2].z-circle[1].z,2),1.5)- 400*(circle[2].z-circle[0].z)/Math.pow(Math.pow(circle[2].x-circle[0].x,2)+Math.pow(circle[2].y-circle[0].y,2)+Math.pow(circle[2].z-circle[0].z,2),1.5);
 
-/*
+
     for (i=0; i < 3; i++){
       console.log(i,'xdir',circle[i].xdir);
       console.log(i,'ydir',circle[i].ydir);
       console.log(i,'zdir',circle[i].zdir);
-    }*/
+    }
+    console.log(circle[0].xdir);
 
 
   requestAnimationFrame(draw);
