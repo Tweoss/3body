@@ -3,9 +3,9 @@ var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 var i;
 var circle = [
-  {x:20, y:20, xdir:0,ydir:0,r:10},
+  {x:60, y:20, xdir:0,ydir:0,r:10},
   {x:40, y:100, xdir:0,ydir:0,r:20},
-  {x:100, y:60, xdir:0,ydir:0,r:40},
+  {x:200, y:60, xdir:0,ydir:0,r:40},
 ];
 
 ctx.fillStyle = "#000000";
