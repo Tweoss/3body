@@ -20,10 +20,10 @@ function draw(){
     ctx.beginPath();
     ctx.arc(circle[i].x, circle[i].y, circle[i].r, 0, 2 * Math.PI);
     ctx.fill();
-    circle[i].x += Number(circle[i].xdir/1000);
+    circle[i].x += circle[i].xdir/1000;
   //  console.log(i,'x',circle[i].x);
-    circle[i].y += Number(circle[i].ydir/1000);
-  //  console.log(i,'y',circle[i].y);
+    circle[i].y += circle[i].ydir/1000;
+    console.log(i,'y',circle[i].y);
   }
 
 //G=1
