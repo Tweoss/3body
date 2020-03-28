@@ -23,7 +23,7 @@ function draw(){
     circle[i].x += circle[i].xdir/1000;
   //  console.log(i,'x',circle[i].x);
     circle[i].y += circle[i].ydir/1000;
-    console.log(i,'y',circle[i].y);
+    //console.log(i,'y',circle[i].y);
   }
 
 //G=1
@@ -41,13 +41,13 @@ function draw(){
     circle[2].ydir +=  -100*(circle[2].y-circle[1].y)/Math.pow(Math.pow(circle[2].x-circle[1].x,2)+Math.pow(circle[2].y-circle[1].y,2)+Math.pow(circle[2].z-circle[1].z,2),1.5)- 400*(circle[2].y-circle[0].y)/Math.pow(Math.pow(circle[2].x-circle[0].x,2)+Math.pow(circle[2].y-circle[0].y,2)+Math.pow(circle[2].z-circle[0].z,2),1.5);
     circle[2].zdir +=  -100*(circle[2].z-circle[1].z)/Math.pow(Math.pow(circle[2].x-circle[1].x,2)+Math.pow(circle[2].y-circle[1].y,2)+Math.pow(circle[2].z-circle[1].z,2),1.5)- 400*(circle[2].z-circle[0].z)/Math.pow(Math.pow(circle[2].x-circle[0].x,2)+Math.pow(circle[2].y-circle[0].y,2)+Math.pow(circle[2].z-circle[0].z,2),1.5);
 
-
+/*
     for (i=0; i < 3; i++){
-      console.log(i,'xdir',circle[i].xdir);
+      console.log(i,'xdir',typeof(circle[i].xdir));
       console.log(i,'ydir',circle[i].ydir);
       console.log(i,'zdir',circle[i].zdir);
-    }
-    console.log(circle[0].xdir);
+    }*/
+    console.log(Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2)+Math.pow(circle[0].z-circle[1].z,2),1.5));
 
 
   requestAnimationFrame(draw);
