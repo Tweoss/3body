@@ -12,7 +12,8 @@ ctx.fillStyle = "#000000";
 
 var xee = typeof(circle[0].x);
 console.log(xee);
-var j = 0;
+
+alert(-400*(circle[0].x-circle[1].x)/Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2)+Math.pow(circle[0].z-circle[1].z,2),3))-1600*(circle[0].x-circle[2].x)/Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[2].x,2)+Math.pow(circle[0].y-circle[2].y,2)+Math.pow(circle[0].z-circle[2].z,2),3)));
 
 
 function draw(){
@@ -22,19 +23,15 @@ function draw(){
     ctx.beginPath();
     ctx.arc(circle[i].x, circle[i].y, circle[i].r, 0, 2 * Math.PI);
     ctx.fill();
-    circle[i].x += circle[i].xdir/1000;
+    circle[i].x += circle[i].xdir/100;
   //  console.log(i,'x',circle[i].x);
-    circle[i].y += circle[i].ydir/1000;
+    circle[i].y += circle[i].ydir/100;
     //console.log(i,'y',circle[i].y);
   }
 
-//G=1
-
   console.log(circle[0]);
-  var wee = "eh";
+
   //alert('circle' + circle[0].x + Math.sqrt(Math.pow(circle[0].x,3)));
-  //alert(Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2)+Math.pow(circle[0].z-circle[1].z,2),1.5),j);
-  j++;
 
     circle[0].xdir +=  -400*(circle[0].x-circle[1].x)/Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2)+Math.pow(circle[0].z-circle[1].z,2),3))-1600*(circle[0].x-circle[2].x)/Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[2].x,2)+Math.pow(circle[0].y-circle[2].y,2)+Math.pow(circle[0].z-circle[2].z,2),3));
     circle[0].ydir +=  -400*(circle[0].y-circle[1].y)/Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2)+Math.pow(circle[0].z-circle[1].z,2),3))-1600*(circle[0].y-circle[2].y)/Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[2].x,2)+Math.pow(circle[0].y-circle[2].y,2)+Math.pow(circle[0].z-circle[2].z,2),3));
