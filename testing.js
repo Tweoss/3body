@@ -31,7 +31,7 @@ function draw(){
 //G=1
 
   console.log(circle[0]);
-  alert(j);
+  alert(j,Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2)+Math.pow(circle[0].z-circle[1].z,2),1.5));
   j++;
 
     circle[0].xdir +=  -400*(circle[0].x-circle[1].x)/Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2)+Math.pow(circle[0].z-circle[1].z,2),1.5)-1600*(circle[0].x-circle[2].x)/Math.pow(Math.pow(circle[0].x-circle[2].x,2)+Math.pow(circle[0].y-circle[2].y,2)+Math.pow(circle[0].z-circle[2].z,2),1.5);
