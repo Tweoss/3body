@@ -32,7 +32,7 @@ function draw(){
 
   console.log(circle[0]);
   var wee = "eh";
-  alert('circle' + circle[0].x + Math.sqrt(Math.pow(circle[0].x,3)));
+  //alert('circle' + circle[0].x + Math.sqrt(Math.pow(circle[0].x,3)));
   //alert(Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2)+Math.pow(circle[0].z-circle[1].z,2),1.5),j);
   j++;
 
