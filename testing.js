@@ -10,7 +10,7 @@ var circle = [
 
 ctx.fillStyle = "#000000";
 
-var xee = typeof(circle.x);
+var xee = typeof(circle[0].x);
 console.log(xee);
 
 function draw(){
