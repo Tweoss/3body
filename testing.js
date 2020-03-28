@@ -13,7 +13,14 @@ ctx.fillStyle = "#000000";
 var xee = typeof(circle[0].x);
 console.log(xee);
 
-alert(-400*(circle[0].x-circle[1].x)/Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2)+Math.pow(circle[0].z-circle[1].z,2),3))-1600*(circle[0].x-circle[2].x)/Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[2].x,2)+Math.pow(circle[0].y-circle[2].y,2)+Math.pow(circle[0].z-circle[2].z,2),3)));
+alert(-400*(circle[0].x-circle[1].x)/Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2)+Math.pow(circle[0].z-circle[1].z,2),3))));
+alert(-400*(circle[0].x-circle[1].x)/Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[1].x,2))));
+alert(Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[1].x,2))));
+alert(Math.pow(Math.pow(circle[0].x-circle[1].x,2)));
+alert(Math.pow(circle[0].x-circle[1].x));
+alert(circle[0].x-circle[1].x);
+alert(circle[0].x);
+
 
 
 function draw(){
