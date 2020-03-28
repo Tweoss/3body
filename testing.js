@@ -17,7 +17,7 @@ alert(-400*(circle[0].x-circle[1].x)/(Math.sqrt(Math.pow(Math.pow(circle[0].x-ci
 alert(-400*(circle[0].x-circle[1].x)/Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[1].x,2),3)));
 alert(Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[1].x,2),3)));
 alert(Math.pow(Math.pow(circle[0].x-circle[1].x,2),3));
-alert(Math.pow(circle[0].x-circle[1].x),2);
+alert(Math.pow(circle[0].x-circle[1].x,2));
 alert(circle[0].x-circle[1].x);
 alert(circle[0].x);
 
