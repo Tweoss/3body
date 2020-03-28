@@ -12,12 +12,12 @@ ctx.fillStyle = "#000000";
 
 var xee = typeof(circle[0].x);
 console.log(xee);
-
-alert(-400*(circle[0].x-circle[1].x)/(Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2)+Math.pow(circle[0].z-circle[1].z,2),3))));
-alert(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2)+Math.pow(circle[0].z-circle[1].z,2));//Nan
-alert(Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2)+Math.pow(circle[0].z-circle[1].z,2),3));//Nan
+/*
+alert(-400*(circle[0].x-circle[1].x)/(Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2),3))));
+alert(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2));//Nan
+alert(Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2),3));//Nan
 alert(-400*(circle[0].x-circle[1].x)/(Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2),3))));//.0142668014
-alert(Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2)+Math.pow(circle[0].z-circle[1].z,2),3)));//Nan
+alert(Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2),3)));//Nan
 alert(Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[1].x,2),3)));//8000
 
 alert(Math.pow(circle[0].y-circle[1].y,2));//6400
@@ -28,7 +28,7 @@ alert(Math.pow(Math.pow(circle[0].x-circle[1].x,2),3));//64000000
 alert(Math.pow(circle[0].x-circle[1].x,2));//400
 alert(circle[0].x-circle[1].x);//-20
 alert(circle[0].x);//20
-
+*/
 
 
 function draw(){
@@ -48,17 +48,14 @@ function draw(){
 
   //alert('circle' + circle[0].x + Math.sqrt(Math.pow(circle[0].x,3)));
 
-    circle[0].xdir +=  -400*(circle[0].x-circle[1].x)/Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2)+Math.pow(circle[0].z-circle[1].z,2),3))-1600*(circle[0].x-circle[2].x)/Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[2].x,2)+Math.pow(circle[0].y-circle[2].y,2)+Math.pow(circle[0].z-circle[2].z,2),3));
-    circle[0].ydir +=  -400*(circle[0].y-circle[1].y)/Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2)+Math.pow(circle[0].z-circle[1].z,2),3))-1600*(circle[0].y-circle[2].y)/Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[2].x,2)+Math.pow(circle[0].y-circle[2].y,2)+Math.pow(circle[0].z-circle[2].z,2),3));
-    circle[0].zdir +=  -400*(circle[0].z-circle[1].z)/Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2)+Math.pow(circle[0].z-circle[1].z,2),3))-1600*(circle[0].z-circle[2].z)/Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[2].x,2)+Math.pow(circle[0].y-circle[2].y,2)+Math.pow(circle[0].z-circle[2].z,2),3));
+    circle[0].xdir +=  -400*(circle[0].x-circle[1].x)/Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2),3))-1600*(circle[0].x-circle[2].x)/Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[2].x,2)+Math.pow(circle[0].y-circle[2].y,2),3));
+    circle[0].ydir +=  -400*(circle[0].y-circle[1].y)/Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2),3))-1600*(circle[0].y-circle[2].y)/Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[2].x,2)+Math.pow(circle[0].y-circle[2].y,2),3));
 
-    circle[1].xdir += -1600*(circle[1].x-circle[0].x)/Math.sqrt(Math.pow(Math.pow(circle[1].x-circle[0].x,2)+Math.pow(circle[1].y-circle[0].y,2)+Math.pow(circle[1].z-circle[0].z,2),3))- 100*(circle[1].x-circle[2].x)/Math.sqrt(Math.pow(Math.pow(circle[1].x-circle[2].x,2)+Math.pow(circle[1].y-circle[2].y,2)+Math.pow(circle[1].z-circle[2].z,2),3));
-    circle[1].ydir += -1600*(circle[1].y-circle[0].y)/Math.sqrt(Math.pow(Math.pow(circle[1].x-circle[0].x,2)+Math.pow(circle[1].y-circle[0].y,2)+Math.pow(circle[1].z-circle[0].z,2),3))- 100*(circle[1].y-circle[2].y)/Math.sqrt(Math.pow(Math.pow(circle[1].x-circle[2].x,2)+Math.pow(circle[1].y-circle[2].y,2)+Math.pow(circle[1].z-circle[2].z,2),3));
-    circle[1].zdir += -1600*(circle[1].z-circle[0].z)/Math.sqrt(Math.pow(Math.pow(circle[1].x-circle[0].x,2)+Math.pow(circle[1].y-circle[0].y,2)+Math.pow(circle[1].z-circle[0].z,2),3))- 100*(circle[1].z-circle[2].z)/Math.sqrt(Math.pow(Math.pow(circle[1].x-circle[2].x,2)+Math.pow(circle[1].y-circle[2].y,2)+Math.pow(circle[1].z-circle[2].z,2),3));
+    circle[1].xdir += -1600*(circle[1].x-circle[0].x)/Math.sqrt(Math.pow(Math.pow(circle[1].x-circle[0].x,2)+Math.pow(circle[1].y-circle[0].y,2),3))- 100*(circle[1].x-circle[2].x)/Math.sqrt(Math.pow(Math.pow(circle[1].x-circle[2].x,2)+Math.pow(circle[1].y-circle[2].y,2),3));
+    circle[1].ydir += -1600*(circle[1].y-circle[0].y)/Math.sqrt(Math.pow(Math.pow(circle[1].x-circle[0].x,2)+Math.pow(circle[1].y-circle[0].y,2),3))- 100*(circle[1].y-circle[2].y)/Math.sqrt(Math.pow(Math.pow(circle[1].x-circle[2].x,2)+Math.pow(circle[1].y-circle[2].y,2),3));
 
-    circle[2].xdir +=  -100*(circle[2].x-circle[1].x)/Math.sqrt(Math.pow(Math.pow(circle[2].x-circle[1].x,2)+Math.pow(circle[2].y-circle[1].y,2)+Math.pow(circle[2].z-circle[1].z,2),3))- 400*(circle[2].x-circle[0].x)/Math.sqrt(Math.pow(Math.pow(circle[2].x-circle[0].x,2)+Math.pow(circle[2].y-circle[0].y,2)+Math.pow(circle[2].z-circle[0].z,2),3));
-    circle[2].ydir +=  -100*(circle[2].y-circle[1].y)/Math.sqrt(Math.pow(Math.pow(circle[2].x-circle[1].x,2)+Math.pow(circle[2].y-circle[1].y,2)+Math.pow(circle[2].z-circle[1].z,2),3))- 400*(circle[2].y-circle[0].y)/Math.sqrt(Math.pow(Math.pow(circle[2].x-circle[0].x,2)+Math.pow(circle[2].y-circle[0].y,2)+Math.pow(circle[2].z-circle[0].z,2),3));
-    circle[2].zdir +=  -100*(circle[2].z-circle[1].z)/Math.sqrt(Math.pow(Math.pow(circle[2].x-circle[1].x,2)+Math.pow(circle[2].y-circle[1].y,2)+Math.pow(circle[2].z-circle[1].z,2),3))- 400*(circle[2].z-circle[0].z)/Math.sqrt(Math.pow(Math.pow(circle[2].x-circle[0].x,2)+Math.pow(circle[2].y-circle[0].y,2)+Math.pow(circle[2].z-circle[0].z,2),3));
+    circle[2].xdir +=  -100*(circle[2].x-circle[1].x)/Math.sqrt(Math.pow(Math.pow(circle[2].x-circle[1].x,2)+Math.pow(circle[2].y-circle[1].y,2),3))- 400*(circle[2].x-circle[0].x)/Math.sqrt(Math.pow(Math.pow(circle[2].x-circle[0].x,2)+Math.pow(circle[2].y-circle[0].y,2),3));
+    circle[2].ydir +=  -100*(circle[2].y-circle[1].y)/Math.sqrt(Math.pow(Math.pow(circle[2].x-circle[1].x,2)+Math.pow(circle[2].y-circle[1].y,2),3))- 400*(circle[2].y-circle[0].y)/Math.sqrt(Math.pow(Math.pow(circle[2].x-circle[0].x,2)+Math.pow(circle[2].y-circle[0].y,2),3));
 
 /*
     for (i=0; i < 3; i++){
