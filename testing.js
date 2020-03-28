@@ -23,7 +23,7 @@ function draw(){
     circle[i].x += circle[i].xdir/1000;
   //  console.log(i,'x',circle[i].x);
     circle[i].y += circle[i].ydir/1000;
-  //  console.log(i,'y',circle[i].y);
+    console.log(i,'y',circle[i].y);
   }
 
 //G=1
