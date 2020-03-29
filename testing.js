@@ -8,6 +8,26 @@ var circle = [
   {x:150, y:200, xdir:-2*0.184279,ydir:-2*0.587188,r:10},
 ];
 
+circle[0].x = document.getElementById("x1");
+circle[0].y = document.getElementById("y1");
+circle[1].x = document.getElementById("x2");
+circle[1].y = document.getElementById("y2");
+circle[2].x = document.getElementById("x3");
+circle[2].y = document.getElementById("y3");
+
+circle[0].xdir = document.getElementById("xd1");
+circle[0].ydir = document.getElementById("yd1");
+circle[1].xdir = document.getElementById("xd2");
+circle[1].ydir = document.getElementById("yd2");
+circle[2].xdir = document.getElementById("xd3");
+circle[2].ydir = document.getElementById("yd3");
+
+circle[0].r = document.getElementById("r1");
+circle[1].r = document.getElementById("r2");
+circle[2].r = document.getElementById("r3");
+
+
+
 /*(-1,0), (1,0), (0,0)
 (-100,0), (100,0), (0,0)
 (50,200), (250,200), (150,200)
