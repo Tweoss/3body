@@ -67,23 +67,23 @@ tr:nth-child(even) {
 </table>
 
 <div class="toolbar">
-  <input type="number" min="0" value="10" aria-labelledby="Radius of Circle 1" id="r1">
-  <input type="number" min="-10" max="10" value="0.184279" aria-label="X Direction of Circle 1" id="xd1">
-  <input type="number" min="-10" max="10" value="0.587188" aria-label="Y Direction of Circle 1" id="yd1">
-  <input type="number" min="0" max="400" value="50" aria-label="X Position of Circle 1" id="x1">
-  <input type="number" min="0" max="400" value="200" aria-label="Y Position of Circle 1" id="y1">
+  <input type="number" id="r1"  oninput="boundcheck('r','1')"  min="0" value="10" aria-labelledby="Radius of Circle 1">
+  <input type="number" id="xd1" oninput="boundcheck('xd','1')" min="-10" max="10" value="0.184279" aria-label="X Direction of Circle 1">
+  <input type="number" id="yd1" oninput="boundcheck('yd','1')" min="-10" max="10" value="0.587188" aria-label="Y Direction of Circle 1">
+  <input type="number" id="x1"  oninput="boundcheck('x','1')"  min="0" max="400" value="50" aria-label="X Position of Circle 1">
+  <input type="number" id="y1"  oninput="boundcheck('y','1')"  min="0" max="400" value="200" aria-label="Y Position of Circle 1">
 
-  <input type="number" min="0" value="10" aria-label="Radius of Circle 2" id="r2">
-  <input type="number" min="-10" max="10" value="0.184279" aria-label="X Direction of Circle 2" id="xd2">
-  <input type="number" min="-10" max="10" value="0.587188" aria-label="Y Direction of Circle 2" id="yd2">
-  <input type="number" min="0" max="400" value="250" aria-label="X Position of Circle 2" id="x2">
-  <input type="number" min="0" max="400" value="200" aria-label="Y Position of Circle 2" id="y2">
+  <input type="number" id="r2"  oninput="boundcheck('r','2')"  min="0" value="10" aria-label="Radius of Circle 2">
+  <input type="number" id="xd2" oninput="boundcheck('xd','2')" min="-10" max="10" value="0.184279" aria-label="X Direction of Circle 2">
+  <input type="number" id="yd2" oninput="boundcheck('yd','2')" min="-10" max="10" value="0.587188" aria-label="Y Direction of Circle 2">
+  <input type="number" id="x2"  oninput="boundcheck('x','2')"  min="0" max="400" value="250" aria-label="X Position of Circle 2">
+  <input type="number" id="y2"  oninput="boundcheck('y','2')"  min="0" max="400" value="200" aria-label="Y Position of Circle 2">
 
-  <input type="number" min="0" value="10" aria-label="Radius of Circle 3" id="r3">
-  <input type="number" min="-10" max="10" value="-0.368558" aria-label="X Direction of Circle 3" id="xd3">
-  <input type="number" min="-10" max="10" value="-1.174376" aria-label="Y Direction of Circle 3" id="yd3">
-  <input type="number" min="0" max="400" value="150" aria-label="X Position of Circle 3" id="x3">
-  <input type="number" min="0" max="400" value="200" aria-label="Y Position of Circle 3" id="y3">
+  <input type="number" id="r3"  oninput="boundcheck('r','3')"  min="0" value="10" aria-label="Radius of Circle 3">
+  <input type="number" id="xd3" oninput="boundcheck('xd','3')" min="-10" max="10" value="-0.368558" aria-label="X Direction of Circle 3">
+  <input type="number" id="yd3" oninput="boundcheck('yd','3')" min="-10" max="10" value="-1.174376" aria-label="Y Direction of Circle 3">
+  <input type="number" id="x3"  oninput="boundcheck('x','3')"  min="0" max="400" value="150" aria-label="X Position of Circle 3">
+  <input type="number" id="y3"  oninput="boundcheck('y','3')"  min="0" max="400" value="200" aria-label="Y Position of Circle 3">
 
 
 </div>
@@ -111,6 +111,47 @@ tr:nth-child(even) {
     var name = "test";
     document.getElementById('Name').innerHTML = name;
   };
+
+  function boundcheck(type,number) {
+  var thevalue = document.getElementById(type + number);
+  switch (type){
+    case 'r':
+      if (thevalue.value < 0)
+        thevalue.value = 0;
+      else if (thevalue.value > 10)
+        thevalue.value = 10;
+      break;
+    case 'xd':
+      if (thevalue.value < -10)
+        thevalue.value = -10;
+      else if (thevalue.value > 10)
+        thevalue.value = 10;
+      break;
+    case 'yd':
+      if (thevalue.value < -10)
+        thevalue.value = -10;
+      else if (thevalue.value > 10)
+        thevalue.value = 10;
+      break;
+    case 'x':
+      if (thevalue.value < 0)
+        thevalue.value = 0;
+      else if (thevalue.value > 400)
+        thevalue.value = 400;
+      break;
+    case 'y':
+      if (thevalue.value < 0)
+        thevalue.value = 0;
+      else if (thevalue.value > 400)
+        thevalue.value = 400;
+      break;
+  }
+
+
+  }
+
+
+}
 
 
 
