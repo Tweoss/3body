@@ -65,14 +65,14 @@ function draw(){
 
   //alert('circle' + circle[0].x + Math.sqrt(Math.pow(circle[0].x,3)));
 
-    circle[0].xdir += 1000*(-1*(circle[0].x-circle[1].x)/Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2),3))-1*(circle[0].x-circle[2].x)/Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[2].x,2)+Math.pow(circle[0].y-circle[2].y,2),3)) );
-    circle[0].ydir += 1000*(-1*(circle[0].y-circle[1].y)/Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2),3))-1*(circle[0].y-circle[2].y)/Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[2].x,2)+Math.pow(circle[0].y-circle[2].y,2),3)) );
+    circle[0].xdir += 109*(-1*(circle[0].x-circle[1].x)/Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2),3))-1*(circle[0].x-circle[2].x)/Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[2].x,2)+Math.pow(circle[0].y-circle[2].y,2),3)) );
+    circle[0].ydir += 109*(-1*(circle[0].y-circle[1].y)/Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[1].x,2)+Math.pow(circle[0].y-circle[1].y,2),3))-1*(circle[0].y-circle[2].y)/Math.sqrt(Math.pow(Math.pow(circle[0].x-circle[2].x,2)+Math.pow(circle[0].y-circle[2].y,2),3)) );
 
-    circle[1].xdir += 1000*( -1*(circle[1].x-circle[0].x)/Math.sqrt(Math.pow(Math.pow(circle[1].x-circle[0].x,2)+Math.pow(circle[1].y-circle[0].y,2),3))-1*(circle[1].x-circle[2].x)/Math.sqrt(Math.pow(Math.pow(circle[1].x-circle[2].x,2)+Math.pow(circle[1].y-circle[2].y,2),3)) );
-    circle[1].ydir += 1000*( -1*(circle[1].y-circle[0].y)/Math.sqrt(Math.pow(Math.pow(circle[1].x-circle[0].x,2)+Math.pow(circle[1].y-circle[0].y,2),3))-1*(circle[1].y-circle[2].y)/Math.sqrt(Math.pow(Math.pow(circle[1].x-circle[2].x,2)+Math.pow(circle[1].y-circle[2].y,2),3)) );
+    circle[1].xdir += 109*( -1*(circle[1].x-circle[0].x)/Math.sqrt(Math.pow(Math.pow(circle[1].x-circle[0].x,2)+Math.pow(circle[1].y-circle[0].y,2),3))-1*(circle[1].x-circle[2].x)/Math.sqrt(Math.pow(Math.pow(circle[1].x-circle[2].x,2)+Math.pow(circle[1].y-circle[2].y,2),3)) );
+    circle[1].ydir += 109*( -1*(circle[1].y-circle[0].y)/Math.sqrt(Math.pow(Math.pow(circle[1].x-circle[0].x,2)+Math.pow(circle[1].y-circle[0].y,2),3))-1*(circle[1].y-circle[2].y)/Math.sqrt(Math.pow(Math.pow(circle[1].x-circle[2].x,2)+Math.pow(circle[1].y-circle[2].y,2),3)) );
 
-    circle[2].xdir += 1000*( -1*(circle[2].x-circle[1].x)/Math.sqrt(Math.pow(Math.pow(circle[2].x-circle[1].x,2)+Math.pow(circle[2].y-circle[1].y,2),3))-1*(circle[2].x-circle[0].x)/Math.sqrt(Math.pow(Math.pow(circle[2].x-circle[0].x,2)+Math.pow(circle[2].y-circle[0].y,2),3)) );
-    circle[2].ydir += 1000*( -1*(circle[2].y-circle[1].y)/Math.sqrt(Math.pow(Math.pow(circle[2].x-circle[1].x,2)+Math.pow(circle[2].y-circle[1].y,2),3))-1*(circle[2].y-circle[0].y)/Math.sqrt(Math.pow(Math.pow(circle[2].x-circle[0].x,2)+Math.pow(circle[2].y-circle[0].y,2),3)) );
+    circle[2].xdir += 109*( -1*(circle[2].x-circle[1].x)/Math.sqrt(Math.pow(Math.pow(circle[2].x-circle[1].x,2)+Math.pow(circle[2].y-circle[1].y,2),3))-1*(circle[2].x-circle[0].x)/Math.sqrt(Math.pow(Math.pow(circle[2].x-circle[0].x,2)+Math.pow(circle[2].y-circle[0].y,2),3)) );
+    circle[2].ydir += 109*( -1*(circle[2].y-circle[1].y)/Math.sqrt(Math.pow(Math.pow(circle[2].x-circle[1].x,2)+Math.pow(circle[2].y-circle[1].y,2),3))-1*(circle[2].y-circle[0].y)/Math.sqrt(Math.pow(Math.pow(circle[2].x-circle[0].x,2)+Math.pow(circle[2].y-circle[0].y,2),3)) );
 
 /*
     for (i=0; i < 3; i++){
