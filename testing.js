@@ -5,7 +5,7 @@ var i;
 var j;
 var k;
 var circle = [
-  {x:50 , y:200, xdir:   0.184279,ydir:   0.587188,r:10},
+  {x:50 , y:200, xdir:   0.184279,ydir:   0.587188,r:10},//r=30 makes for interesting stuff
   {x:250, y:200, xdir:   0.184279,ydir:   0.587188,r:10},
   {x:150, y:200, xdir:-2*0.184279,ydir:-2*0.587188,r:10},
 ];
