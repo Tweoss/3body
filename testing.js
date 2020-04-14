@@ -8,23 +8,23 @@ var circle = [
   {x:150, y:200, xdir:-2*0.184279,ydir:-2*0.587188,r:10},
 ];
 function reassign(){
-  circle[0].x = document.getElementById("x1").value;
-  circle[0].y = document.getElementById("y1").value;
-  circle[1].x = document.getElementById("x2").value;
-  circle[1].y = document.getElementById("y2").value;
-  circle[2].x = document.getElementById("x3").value;
-  circle[2].y = document.getElementById("y3").value;
+  circle[0].x = parseFloat(document.getElementById("x1").value);
+  circle[0].y = parseFloat(document.getElementById("y1").value);
+  circle[1].x = parseFloat(document.getElementById("x2").value);
+  circle[1].y = parseFloat(document.getElementById("y2").value);
+  circle[2].x = parseFloat(document.getElementById("x3").value);
+  circle[2].y = parseFloat(document.getElementById("y3").value);
 
-  circle[0].xdir = document.getElementById("xd1").value;
-  circle[0].ydir = document.getElementById("yd1").value;
-  circle[1].xdir = document.getElementById("xd2").value;
-  circle[1].ydir = document.getElementById("yd2").value;
-  circle[2].xdir = document.getElementById("xd3").value;
-  circle[2].ydir = document.getElementById("yd3").value;
+  circle[0].xdir = parseFloat(document.getElementById("xd1").value);
+  circle[0].ydir = parseFloat(document.getElementById("yd1").value);
+  circle[1].xdir = parseFloat(document.getElementById("xd2").value);
+  circle[1].ydir = parseFloat(document.getElementById("yd2").value);
+  circle[2].xdir = parseFloat(document.getElementById("xd3").value);
+  circle[2].ydir = parseFloat(document.getElementById("yd3").value);
 
-  circle[0].r = document.getElementById("r1").value;
-  circle[1].r = document.getElementById("r2").value;
-  circle[2].r = document.getElementById("r3").value;
+  circle[0].r = parseFloat(document.getElementById("r1").value);
+  circle[1].r = parseFloat(document.getElementById("r2").value);
+  circle[2].r = parseFloat(document.getElementById("r3").value);
   console.log(circle);
   //draw();
 }
