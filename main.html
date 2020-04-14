@@ -67,11 +67,22 @@ tr:nth-child(even) {
 </table>
 
 
+div.flex {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+
 <div class="toolbar">
-    <span id="radius1">Radius of Circle 1</span>
-    <input type="number" id="r1"  oninput="boundcheck('r','1')"  aria-labelledby="radius1" value="10">
-    <span id="xdirec1">X Direction of Circle 1</span>
-    <input type="number" id="xd1" oninput="boundcheck('xd','1')" aria-labelledby="xdirec1" value="0.184279">
+    <div class="flex">
+      <span id="radius1">Radius of Circle 1</span>
+      <input type="number" id="r1"  oninput="boundcheck('r','1')"  aria-labelledby="radius1" value="10">
+    </div>
+    <div class="flex">
+      <span id="xdirec1">X Direction of Circle 1</span>
+      <input type="number" id="xd1" oninput="boundcheck('xd','1')" aria-labelledby="xdirec1" value="0.184279">
+    </div>
     <span id="ydirec1">Y Direction of Circle 1</span>
     <input type="number" id="yd1" oninput="boundcheck('yd','1')" aria-labelledby="ydirec1" value="0.587188">
     <div id="xcoord1">X Coordinate of Circle 1</div>
