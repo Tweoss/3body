@@ -98,7 +98,7 @@ function boundcheck(type,number) {
 }
 
 function drawer(){
-  if (animate = 0){
+  if (animate == 0){
     animate = 1;
     draw();
   }
