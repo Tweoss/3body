@@ -25,8 +25,7 @@ function reassign(){
   circle[0].r = parseFloat(document.getElementById("r1").value);
   circle[1].r = parseFloat(document.getElementById("r2").value);
   circle[2].r = parseFloat(document.getElementById("r3").value);
-  console.log(circle);
-  //draw();
+
 }
 
 
@@ -67,7 +66,7 @@ function draw(){
 
   j++;
   if (j<10){
-    console.log(circle);
+    //console.log(circle);
   }
 
 
