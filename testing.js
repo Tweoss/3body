@@ -34,6 +34,10 @@ function addcircle(){
 
 function dircalc(){
   for (i=0; i<circle.length; i++){
+    circle[i].x += circle[i].xdir;
+    circle[i].y += circle[i].ydir;
+  }
+  for (i=0; i<circle.length; i++){
     for (j=0; j<circle.length; j++){
       if (i != j){
         circle[i].xdir -= .0109*Math.pow(circle[i].r*circle[j].r,2)*(circle[i].x-circle[j].x)/Math.pow(Math.pow(circle[i].x-circle[j].x,2)+Math.pow(circle[i].y-circle[j].y,2),1.5);
@@ -112,7 +116,9 @@ function stopdraw(){
 
 //function
 
-
+document.body.addEventListener("mousedown"),function(event)){
+  ;
+}
 
 
 //DRAW FUNCTIONS
@@ -121,18 +127,16 @@ ctx.fillStyle = "#000000";
 
 function draw(){
   ctx.clearRect(0, 0, 400, 400);
-
+/*
   k++;
   if (k<10){
     console.log(circle);
-  }
+  }*/
 
   for (i = 0; i < circle.length; i++) {
     ctx.beginPath();
     ctx.arc(circle[i].x, circle[i].y, circle[i].r, 0, 2 * Math.PI);
     ctx.fill();
-    circle[i].x += circle[i].xdir;
-    circle[i].y += circle[i].ydir;
   }
 
   if (animate == 1){
