@@ -120,7 +120,7 @@ function circlecol(mousex,mousey,x,y,r){
     return false;
 }
 
-document.body.addEventListener("mousedown",function(event)){
+canvas.body.addEventListener("mousedown",function(event){
   mouse.x = event.pageX - canvas.offsetLeft;
   mouse.y = event.pageY - canvas.offsetTop;
   for (i=0; i<circle.length; i++){
@@ -128,8 +128,8 @@ document.body.addEventListener("mousedown",function(event)){
       ;
     }
   }
-  if(circlecol(event.clientX,event.clientY,));
-}
+  
+});
 
 
 //DRAW FUNCTIONS
