@@ -25,6 +25,7 @@ function reassign(){
   circle[0].r = document.getElementById("r1");
   circle[1].r = document.getElementById("r2");
   circle[2].r = document.getElementById("r3");
+  draw();
 }
 
 
