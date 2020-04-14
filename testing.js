@@ -110,7 +110,7 @@ function stopdraw(){
 
 //DRAG FUNCTIONS
 
-function
+//function
 
 
 
