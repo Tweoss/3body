@@ -4,6 +4,7 @@ var ctx = canvas.getContext("2d");
 var i;
 var j;
 var k = 0;
+var mean;
 var animate = 0;
 var circle = [
   {x:50 , y:200, xdir:   0.184279,ydir:   0.587188,r:10},//r=30 makes for interesting stuff
@@ -39,6 +40,23 @@ function dircalc(){
         circle[i].ydir -= .0109*Math.pow(circle[i].r*circle[j].r,2)*(circle[i].y-circle[j].y)/Math.pow(Math.pow(circle[i].x-circle[j].x,2)+Math.pow(circle[i].y-circle[j].y,2),1.5);
       }
     }
+  }
+  if (document.getElementById("isFollow") == true){
+    mean = 0;
+    for (i=0; i<circle.length; i++){
+      mean +=circle[i].x;
+    }
+    for (i=0; i<circle.length; i++){
+      circle[i].x -= mean;
+    }
+    mean=0
+    for (i=0; i<circle.length; i++){
+      mean +=circle[i].y;
+    }
+    for (i=0; i<circle.length; i++){
+      circle[i].y -= mean;
+    }
+
   }
 }
 
@@ -90,10 +108,14 @@ function stopdraw(){
 
 //DRAG FUNCTIONS
 
+function
 
-ctx.fillStyle = "#000000";
+
+
 
 //DRAW FUNCTIONS
+
+ctx.fillStyle = "#000000";
 
 function draw(){
   ctx.clearRect(0, 0, 400, 400);
