@@ -39,39 +39,40 @@ function dircalc(){
 }
 
 function boundcheck(type,number) {
-var thevalue = document.getElementById(type + number);
-switch (type){
-  case 'r':
-    if (thevalue.value < 0)
-      thevalue.value = 0;
-    else if (thevalue.value > 50)
-      thevalue.value = 50;
-    break;
-  case 'xd':
-    if (thevalue.value < -10)
-      thevalue.value = -10;
-    else if (thevalue.value > 10)
-      thevalue.value = 10;
-    break;
-  case 'yd':
-    if (thevalue.value < -10)
-      thevalue.value = -10;
-    else if (thevalue.value > 10)
-      thevalue.value = 10;
-    break;
-  case 'x':
-    if (thevalue.value < 0)
-      thevalue.value = 0;
-    else if (thevalue.value > 400)
-      thevalue.value = 400;
-    break;
-  case 'y':
-    if (thevalue.value < 0)
-      thevalue.value = 0;
-    else if (thevalue.value > 400)
-      thevalue.value = 400;
-    break;
+  var thevalue = document.getElementById(type + number);
+  switch (type){
+    case 'r':
+      if (thevalue.value < 0)
+        thevalue.value = 0;
+      else if (thevalue.value > 50)
+        thevalue.value = 50;
+      break;
+    case 'xd':
+      if (thevalue.value < -10)
+        thevalue.value = -10;
+      else if (thevalue.value > 10)
+        thevalue.value = 10;
+      break;
+    case 'yd':
+      if (thevalue.value < -10)
+        thevalue.value = -10;
+      else if (thevalue.value > 10)
+        thevalue.value = 10;
+      break;
+    case 'x':
+      if (thevalue.value < 0)
+        thevalue.value = 0;
+      else if (thevalue.value > 400)
+        thevalue.value = 400;
+      break;
+    case 'y':
+      if (thevalue.value < 0)
+        thevalue.value = 0;
+      else if (thevalue.value > 400)
+        thevalue.value = 400;
+      break;
   }
+  reassign();
 }
 
 function drawer(){
