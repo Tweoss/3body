@@ -98,8 +98,10 @@ function boundcheck(type,number) {
 }
 
 function drawer(){
-  animate = 1;
-  draw();
+  if (animate = 0){
+    animate = 1;
+    draw();
+  }
 }
 
 function stopdraw(){
