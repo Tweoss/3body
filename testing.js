@@ -47,7 +47,7 @@ function dircalc(){
   for (i=0; i<circle.length; i++){
     for (j=0; j<circle.length; j++){
       if (i != j){
-        circle[i].x -= .0109*Math.pow(circle[i].r*circle[j].r,2)*(circle[0].x-circle[1].x)/(Math.pow(Math.pow(circle[i].x-circle[j].x,2)+Math.pow(circle[i].y-circle[j].y,2),1.5);
+        circle[i].x -= .0109*Math.pow(circle[i].r*circle[j].r,2)*(circle[0].x-circle[1].x)/Math.pow(Math.pow(circle[i].x-circle[j].x,2)+Math.pow(circle[i].y-circle[j].y,2),1.5);
       }
     }
   }
