@@ -28,7 +28,7 @@ div.flex1 {
   display: flex;
   flex-flow: column nowrap;
   align-items: flex-start;
-  padding-right: 5px;
+  padding-right: 15px;
 }
 
 </style>
@@ -106,29 +106,49 @@ div.flex1 {
       <input type="number" id="y1"  oninput="boundcheck('y','1')"  aria-labelledby="ycoord1" value="200">
     </div>
 </div>
-<div class="toolbar">
-    <p id="radius2">Radius of Circle 2</p>
+<div class="flex">
+  <div class="flex1">
+    <span id="radius2">Radius of Circle 2</span>
     <input type="number" id="r2"  oninput="boundcheck('r','2')"  aria-labelledby="radius2" value="10">
-    <p id="xdirec2">X Direction of Circle 2</p>
+  </div>
+  <div class="flex1">
+    <span id="xdirec2">X Direction of Circle 2</span>
     <input type="number" id="xd2" oninput="boundcheck('xd','2')" aria-labelledby="xdirec2" value="0.184279">
-    <p id="ydirec2">Y Direction of Circle 2</p>
+  </div>
+  <div class="flex1">
+    <span id="ydirec2">Y Direction of Circle 2</span>
     <input type="number" id="yd2" oninput="boundcheck('yd','2')" aria-labelledby="ydirec2" value="0.587188">
-    <p id="xcoord2">X Coordinate of Circle 2</p>
+  </div>
+  <div class="flex1">
+    <div id="xcoord2">X Coordinate of Circle 2</div>
     <input type="number" id="x2"  oninput="boundcheck('x','2')"  aria-labelledby="xcoord2" value="50">
-    <p id="ycoord1">Y Coordinate of Circle 1</p>
+  </div>
+  <div class="flex1">
+    <div id="ycoord2">Y Coordinate of Circle 2</div>
     <input type="number" id="y2"  oninput="boundcheck('y','2')"  aria-labelledby="ycoord2" value="200">
+  </div>
 </div>
-<div class="toolbar">
-    <div id="radius1">Radius of Circle 3</div>
+<div class="flex">
+  <div class="flex1">
+    <span id="radius3">Radius of Circle 3</span>
     <input type="number" id="r3"  oninput="boundcheck('r','3')"  aria-labelledby="radius3" value="10">
-    <div id="xdirec1">X Direction of Circle 3</div>
+  </div>
+  <div class="flex1">
+    <span id="xdirec3">X Direction of Circle 3</span>
     <input type="number" id="xd3" oninput="boundcheck('xd','3')" aria-labelledby="xdirec3" value="0.184279">
-    <div id="ydirec1">Y Direction of Circle 3</div>
+  </div>
+  <div class="flex1">
+    <span id="ydirec3">Y Direction of Circle 3</span>
     <input type="number" id="yd3" oninput="boundcheck('yd','3')" aria-labelledby="ydirec3" value="0.587188">
-    <div id="xcoord1">X Coordinate of Circle 3</div>
+  </div>
+  <div class="flex1">
+    <div id="xcoord3">X Coordinate of Circle 1</div>
     <input type="number" id="x3"  oninput="boundcheck('x','3')"  aria-labelledby="xcoord3" value="50">
-    <div id="ycoord1">Y Coordinate of Circle 3</div>
+  </div>
+  <div class="flex1">
+    <div id="ycoord3">Y Coordinate of Circle 1</div>
     <input type="number" id="y3"  oninput="boundcheck('y','3')"  aria-labelledby="ycoord3" value="200">
+  </div>
 </div>
 
 
