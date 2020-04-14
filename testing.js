@@ -1,9 +1,8 @@
 
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-var i;
-var j;
-var k = 0;
+var i, j, k = 0;
+var mouse = {x: ,y: };
 var mean;
 var animate = 0;
 var circle = [
@@ -114,10 +113,22 @@ function stopdraw(){
 
 //DRAG FUNCTIONS
 
-//function
+function circlecol(mousex,mousey,x,y,r){
+  if (r > Math.sqrt(Math.pow(mousex-x,2)+Math.pow(mousey-y,2)))
+    return true;
+  else
+    return false;
+}
 
-document.body.addEventListener("mousedown"),function(event)){
-  ;
+document.body.addEventListener("mousedown",function(event)){
+  mouse.x = event.pageX - canvas.offsetLeft;
+  mouse.y = event.pageY - canvas.offsetTop;
+  for (i=0; i<circle.length; i++){
+    if(circlecol(event.clientX,event.clientY,circle[i].x,circle[i].y,circle[i].r)){
+      ;
+    }
+  }
+  if(circlecol(event.clientX,event.clientY,));
 }
 
 
