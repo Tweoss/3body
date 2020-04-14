@@ -80,9 +80,9 @@
   </table>
   <br>
   <div class="toolbar">
-    <input type="button" oninput="draw()"     value="Start">
+    <input type="button" onclick="draw()"     value="Start">
     <input type="button" id="Stop Button"     value="Stop" >
-    <input type="button" oninput="reassign()" value="Reset">
+    <input type="button" onclick="reassign()" value="Reset">
   </div>
 
   <canvas id="myCanvas" height="400" width="400" style="border:1px solid #000000;"> </canvas>
@@ -178,47 +178,6 @@
       var name = "test";
       document.getElementById('Name').innerHTML = name;
     };
-
-    function boundcheck(type,number) {
-    var thevalue = document.getElementById(type + number);
-    switch (type){
-      case 'r':
-        if (thevalue.value < 0)
-          thevalue.value = 0;
-        else if (thevalue.value > 50)
-          thevalue.value = 50;
-        break;
-      case 'xd':
-        if (thevalue.value < -10)
-          thevalue.value = -10;
-        else if (thevalue.value > 10)
-          thevalue.value = 10;
-        break;
-      case 'yd':
-        if (thevalue.value < -10)
-          thevalue.value = -10;
-        else if (thevalue.value > 10)
-          thevalue.value = 10;
-        break;
-      case 'x':
-        if (thevalue.value < 0)
-          thevalue.value = 0;
-        else if (thevalue.value > 400)
-          thevalue.value = 400;
-        break;
-      case 'y':
-        if (thevalue.value < 0)
-          thevalue.value = 0;
-        else if (thevalue.value > 400)
-          thevalue.value = 400;
-        break;
-    }
-
-
-    }
-
-
-
 
   </script>
 
