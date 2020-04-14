@@ -30,11 +30,11 @@ function reassign(){
   circle[2].r = parseFloat(document.getElementById("r3").value);
 */
   for (i=1; i≤circle.length; i++){
-    circle[i].x    = parseFloat(document.getElementById("x" +  i.toString()).value);
-    circle[i].y    = parseFloat(document.getElementById("y" +  i.toString()).value);
-    circle[i].xdir = parseFloat(document.getElementById("xd"+  i.toString()).value);
-    circle[i].ydir = parseFloat(document.getElementById("yd"+  i.toString()).value);
-    circle[i].r    = parseFloat(document.getElementById("r" +  i.toString()).value);
+    circle[i-1].x    = parseFloat(document.getElementById("x" +  i.toString()).value);
+    circle[i-1].y    = parseFloat(document.getElementById("y" +  i.toString()).value);
+    circle[i-1].xdir = parseFloat(document.getElementById("xd"+  i.toString()).value);
+    circle[i-1].ydir = parseFloat(document.getElementById("yd"+  i.toString()).value);
+    circle[i-1].r    = parseFloat(document.getElementById("r" +  i.toString()).value);
   }
   console.log(circle);
   //draw();
