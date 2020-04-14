@@ -2,7 +2,7 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 var i, j, k = 0;
-var mouse = {x: ,y: };
+var mouse = {x:0,y:0};
 var mean;
 var animate = 0;
 var circle = [
