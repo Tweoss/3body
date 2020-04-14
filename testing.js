@@ -47,14 +47,14 @@ function dircalc(){
       mean +=circle[i].x;
     }
     for (i=0; i<circle.length; i++){
-      circle[i].x -= mean;
+      circle[i].x -= mean/circle.legth;
     }
     mean=0
     for (i=0; i<circle.length; i++){
       mean +=circle[i].y;
     }
     for (i=0; i<circle.length; i++){
-      circle[i].y -= mean;
+      circle[i].y -= mean/circle.length;
     }
 
   }
