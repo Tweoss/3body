@@ -25,6 +25,8 @@ function reassign() {
 
 function addcircle(){
   circle.push({x:30, y: 30, xdir: 1, ydir: 1, r:10});
+  animate = 0;
+  draw();
 }
 
 function dircalc(){
