@@ -29,7 +29,7 @@ function reassign(){
   circle[1].r = parseFloat(document.getElementById("r2").value);
   circle[2].r = parseFloat(document.getElementById("r3").value);
 */
-  for (i=0; i<circle.length; i++){
+  for (i=1; i≤circle.length; i++){
     circle[i].x    = parseFloat(document.getElementById("x" +  i.toString()).value);
     circle[i].y    = parseFloat(document.getElementById("y" +  i.toString()).value);
     circle[i].xdir = parseFloat(document.getElementById("xd"+  i.toString()).value);
