@@ -11,6 +11,8 @@ var circle = [
   {x:150, y:200, xdir:-2*0.184279,ydir:-2*0.587188,r:10},
 ];
 
+//BASIC FUNCTIONS
+
 function reassign() {
   for (i=1; i<=circle.length; i++){
     circle[i-1].x    = parseFloat(document.getElementById("x" +  i.toString()).value);
@@ -86,8 +88,12 @@ function stopdraw(){
   animate = 0;
 }
 
+//DRAG FUNCTIONS
+
+
 ctx.fillStyle = "#000000";
 
+//DRAW FUNCTIONS
 
 function draw(){
   ctx.clearRect(0, 0, 400, 400);
@@ -97,7 +103,7 @@ function draw(){
     console.log(circle);
   }
 
-  for (i = 0; i < 3; i++) {
+  for (i = 0; i < circle.length; i++) {
     ctx.beginPath();
     ctx.arc(circle[i].x, circle[i].y, circle[i].r, 0, 2 * Math.PI);
     ctx.fill();
@@ -105,8 +111,8 @@ function draw(){
     circle[i].y += circle[i].ydir;
   }
 
-  dircalc();
   if (animate == 1){
+    dircalc();
     requestAnimationFrame(draw);
   }
 }
