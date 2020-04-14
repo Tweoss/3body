@@ -3,6 +3,7 @@ var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 var i;
 var j;
+var k;
 var circle = [
   {x:50 , y:200, xdir:   0.184279,ydir:   0.587188,r:10},
   {x:250, y:200, xdir:   0.184279,ydir:   0.587188,r:10},
@@ -83,13 +84,13 @@ alert(circle[0].x-circle[1].x);//-20
 alert(circle[0].x);//20
 */
 
-j = 0;
+k = 0;
 
 function draw(){
   ctx.clearRect(0, 0, 400, 400);
 
   j++;
-  if (j<10){
+  if (k<10){
     console.log(circle);
   }
 
