@@ -4,31 +4,14 @@ var ctx = canvas.getContext("2d");
 var i;
 var j;
 var k;
+var animate = 0;
 var circle = [
   {x:50 , y:200, xdir:   0.184279,ydir:   0.587188,r:10},//r=30 makes for interesting stuff
   {x:250, y:200, xdir:   0.184279,ydir:   0.587188,r:10},
   {x:150, y:200, xdir:-2*0.184279,ydir:-2*0.587188,r:10},
 ];
-function reassign(){
-/*
-  circle[0].x = parseFloat(document.getElementById("x1").value);
-  circle[0].y = parseFloat(document.getElementById("y1").value);
-  circle[1].x = parseFloat(document.getElementById("x2").value);
-  circle[1].y = parseFloat(document.getElementById("y2").value);
-  circle[2].x = parseFloat(document.getElementById("x3").value);
-  circle[2].y = parseFloat(document.getElementById("y3").value);
 
-  circle[0].xdir = parseFloat(document.getElementById("xd1").value);
-  circle[0].ydir = parseFloat(document.getElementById("yd1").value);
-  circle[1].xdir = parseFloat(document.getElementById("xd2").value);
-  circle[1].ydir = parseFloat(document.getElementById("yd2").value);
-  circle[2].xdir = parseFloat(document.getElementById("xd3").value);
-  circle[2].ydir = parseFloat(document.getElementById("yd3").value);
-
-  circle[0].r = parseFloat(document.getElementById("r1").value);
-  circle[1].r = parseFloat(document.getElementById("r2").value);
-  circle[2].r = parseFloat(document.getElementById("r3").value);
-*/
+function reassign() {
   for (i=1; i<=circle.length; i++){
     circle[i-1].x    = parseFloat(document.getElementById("x" +  i.toString()).value);
     circle[i-1].y    = parseFloat(document.getElementById("y" +  i.toString()).value);
@@ -36,8 +19,6 @@ function reassign(){
     circle[i-1].ydir = parseFloat(document.getElementById("yd"+  i.toString()).value);
     circle[i-1].r    = parseFloat(document.getElementById("r" +  i.toString()).value);
   }
-  console.log(circle);
-  //draw();
 }
 
 function addcircle(){
@@ -54,6 +35,53 @@ function dircalc(){
     }
   }
 }
+
+function boundcheck(type,number) {
+var thevalue = document.getElementById(type + number);
+switch (type){
+  case 'r':
+    if (thevalue.value < 0)
+      thevalue.value = 0;
+    else if (thevalue.value > 50)
+      thevalue.value = 50;
+    break;
+  case 'xd':
+    if (thevalue.value < -10)
+      thevalue.value = -10;
+    else if (thevalue.value > 10)
+      thevalue.value = 10;
+    break;
+  case 'yd':
+    if (thevalue.value < -10)
+      thevalue.value = -10;
+    else if (thevalue.value > 10)
+      thevalue.value = 10;
+    break;
+  case 'x':
+    if (thevalue.value < 0)
+      thevalue.value = 0;
+    else if (thevalue.value > 400)
+      thevalue.value = 400;
+    break;
+  case 'y':
+    if (thevalue.value < 0)
+      thevalue.value = 0;
+    else if (thevalue.value > 400)
+      thevalue.value = 400;
+    break;
+  }
+}
+
+function drawer(){
+  animate = 1;
+  draw();
+}
+
+function stopdraw(){
+  animate = 0;
+}
+
+
 
 
 /*(-1,0), (1,0), (0,0)
@@ -131,7 +159,7 @@ function draw(){
       console.log(i,'zdir',circle[i].zdir);
     }*/
 
-
-  requestAnimationFrame(draw);
+  if (animate == 1){
+    requestAnimationFrame(draw);
+  }
 }
-draw();
