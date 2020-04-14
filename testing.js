@@ -25,6 +25,7 @@ function reassign(){
   circle[0].r = document.getElementById("r1");
   circle[1].r = document.getElementById("r2");
   circle[2].r = document.getElementById("r3");
+  console.log(circle);
   draw();
 }
 
@@ -65,7 +66,9 @@ function draw(){
   ctx.clearRect(0, 0, 400, 400);
 
   j++;
-
+  if (j<10){
+    console.log(circle);
+  }
 
 
   for (i = 0; i < 3; i++) {
