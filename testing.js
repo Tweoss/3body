@@ -200,12 +200,14 @@ function dircalc(){
     }
   }
   for (item of circle){
-    offset.x += mean.x/totalmass - 200;
-    item.x   -= mean.x/totalmass;
-    item.x   += 200;
-    offset.y += mean.y/totalmass - 200;
-    item.y   -= mean.y/totalmass;
-    item.y   += 200;
+    if (item.f){
+      offset.x += mean.x/totalmass - 200;
+      item.x   -= mean.x/totalmass;
+      item.x   += 200;
+      offset.y += mean.y/totalmass - 200;
+      item.y   -= mean.y/totalmass;
+      item.y   += 200;
+    }
   }
 }
 
