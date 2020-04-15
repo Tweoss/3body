@@ -193,7 +193,7 @@ function dircalc(){
     }
   }
 
-  follow("null",0);
+  follow("nodraw",0);
   /*for (item of circle){
     if (item.f){
       weightedmass.x +=item.x*Math.pow(item.r,2);
@@ -244,7 +244,9 @@ function follow(number,flip){
 
 
   //animate = 0; NOT SURE
-  draw();
+  if (flip){
+    draw();//so no repeat calling when calls from dircalc
+  }
 }
 
 function boundcheck(type,number) {
