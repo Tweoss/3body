@@ -3,8 +3,9 @@ var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 var i, j, k = 0;
 var mouse = {x:0,y:0};
-var mean;
-var totalmass;
+var mean = 0;
+var totalmass = 0;
+var offset = {x:0, y:0};
 var animate = 0;
 var circle = [
   {x:50 , y:200, xdir:   0.184279,ydir:   0.587188,r:10},//r=30 makes for interesting stuff
@@ -192,7 +193,8 @@ function dircalc(){
       totalmass += Math.pow(circle[i].r,2);
     }
     for (i=0; i<circle.length; i++){
-      circle[i].x -= mean/totalmass;
+      offset.x = mean/totalmass;
+      circle[i].x -= offset.x;
       circle[i].x += 200;
     }
     mean=0
@@ -200,7 +202,8 @@ function dircalc(){
       mean +=circle[i].y*Math.pow(circle[i].r,2);
     }
     for (i=0; i<circle.length; i++){
-      circle[i].y -= mean/totalmass;
+      offset.y = mean/totalmass
+      circle[i].y -= offset.y;
       circle[i].y += 200;
     }
 
