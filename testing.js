@@ -197,14 +197,14 @@ function dircalc(){
 function follow(number){
   circle[parseInt(number)].f = !(circle[parseInt(number)].f);
   mean.x = 0; mean.y = 0; totalmass = 0;
-  for each (item in circle){
+  for (item of circle){
     if (item.f){
       mean.x +=item.x*Math.pow(item.r,2);
       mean.y +=item.y*Math.pow(item.r,2);
       totalmass += Math.pow(item.r,2);
     }
   }
-  for each (item in circle){
+  for (item of circle){
     offset.x += mean/totalmass - 200;
     item.x   -= mean/totalmass;
     item.x   += 200;
