@@ -298,6 +298,7 @@ function draw(){
     for (i=-1; i<12; i++) {
       ctx.moveTo(-40,i*40);ctx.lineTo(440,i*40);
       ctx.moveTo(i*40,-40);ctx.lineTo(i*40,440);
+      ctx.stroke();
     }
   }
 
