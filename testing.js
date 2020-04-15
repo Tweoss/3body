@@ -193,8 +193,8 @@ function dircalc(){
       totalmass += Math.pow(circle[i].r,2);
     }
     for (i=0; i<circle.length; i++){
-      offset.x = mean/totalmass;
-      circle[i].x -= offset.x;
+      offset.x += mean/totalmass - 200;
+      circle[i].x -= mean/totalmass;
       circle[i].x += 200;
     }
     mean=0
@@ -202,8 +202,8 @@ function dircalc(){
       mean +=circle[i].y*Math.pow(circle[i].r,2);
     }
     for (i=0; i<circle.length; i++){
-      offset.y = mean/totalmass
-      circle[i].y -= offset.y;
+      offset.y += mean/totalmass-200;
+      circle[i].y -= mean/totalmass;
       circle[i].y += 200;
     }
 
@@ -300,8 +300,8 @@ function draw(){
   if (document.getElementById("isGrid").checked){
     ctx.beginPath();
     for (i=-1; i<12; i++) {
-      ctx.moveTo(-40,i*40);ctx.lineTo(440,i*40);
-      ctx.moveTo(i*40,-40);ctx.lineTo(i*40,440);
+      ctx.moveTo(-40,i*40 + offset.y % 40);ctx.lineTo(440,i*40 + offset.y % 40);
+      ctx.moveTo(i*40 + offset.x % 40,-40);ctx.lineTo(i*40 + offset.x % 40,440);
       ctx.stroke();
     }
   }
