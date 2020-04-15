@@ -187,18 +187,18 @@ function dircalc(){
     mean = 0;
     var totalmass = 0;
     for (i=0; i<circle.length; i++){
-      mean +=circle[i].x*Math.pow(circle.r,2);
-      totalmass += Math.pow(circle.r,2);
+      mean +=circle[i].x*Math.pow(circle[i].r,2);
+      totalmass += Math.pow(circle[i].r,2);
     }
     for (i=0; i<circle.length; i++){
-      circle[i].x -= mean/circle.length/totalmass;
+      circle[i].x -= mean/circle[i].length/totalmass;
     }
     mean=0
     for (i=0; i<circle.length; i++){
-      mean +=circle[i].y*Math.pow(circle.r,2);
+      mean +=circle[i].y*Math.pow(circle[i].r,2);
     }
     for (i=0; i<circle.length; i++){
-      circle[i].y -= mean/circle.length/totalmass;
+      circle[i].y -= mean/circle[i].length/totalmass;
     }
 
   }
