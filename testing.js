@@ -37,7 +37,7 @@ function addcircle(){
   draw();
   var prebreak = document.getElementById("br" + toString(circle.length-1))
 
-  var tempel[3];//TEMPORARY ELEMNT ARRAY DEPTH OF 3
+  var tempel = [];//TEMPORARY ELEMNT ARRAY DEPTH OF 3
 
   tempel[0] = document.createElement("div");
 {
