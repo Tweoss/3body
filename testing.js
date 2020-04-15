@@ -192,19 +192,21 @@ function dircalc(){
       }
     }
   }
-  if (item.f){
     for (item of circle){
-      mean.x +=item.x*Math.pow(item.r,2);
-      mean.y +=item.y*Math.pow(item.r,2);
-      totalmass += Math.pow(item.r,2);
+      if (item.f){
+        mean.x +=item.x*Math.pow(item.r,2);
+        mean.y +=item.y*Math.pow(item.r,2);
+        totalmass += Math.pow(item.r,2);
+      }
     }
     for (item of circle){
-      offset.x += mean.x/totalmass - 200;
-      item.x   -= mean.x/totalmass;
-      offset.y += mean.y/totalmass - 200;
-      item.y   -= mean.y/totalmass;
-      item.x   += 200;
-      item.y   += 200;
+      if (item.f){
+        offset.x += mean.x/totalmass - 200;
+        item.x   -= mean.x/totalmass;
+        offset.y += mean.y/totalmass - 200;
+        item.y   -= mean.y/totalmass;
+        item.x   += 200;
+        item.y   += 200;
     }
   }
 
@@ -214,13 +216,16 @@ function dircalc(){
 function follow(number){
   circle[parseInt(number)-1].f = !(circle[parseInt(number)-1].f);
   mean.x = 0; mean.y = 0; totalmass = 0;
-  if (item.f){
-    for (item of circle){
+
+  for (item of circle){
+    if (item.f){
       mean.x +=item.x*Math.pow(item.r,2);
       mean.y +=item.y*Math.pow(item.r,2);
       totalmass += Math.pow(item.r,2);
     }
-    for (item of circle){
+  }
+  for (item of circle){
+    if (item.f){
       offset.x += mean.x/totalmass - 200;
       item.x   -= mean.x/totalmass;
       offset.y += mean.y/totalmass - 200;
