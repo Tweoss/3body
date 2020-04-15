@@ -85,6 +85,7 @@
     <input type="button" onclick="stopdraw()"  value="Stop" >
     <input type="button" onclick="reassign()"  value="Reset">
     <input type="button" onclick="addcircle()" value="Add"  >
+    <input type="button" onclick="rmcircle()" value="Remove">
     <input type="checkbox" id="isFollow">
     <label for="isFollow"> Tracking</label>
     <input type="checkbox" id="isGrid" checked="true">
@@ -114,6 +115,10 @@
         <div id="ycoord1">Y Coordinate of Circle 1</div>
         <input type="number" id="y1"  oninput="boundcheck('y','1')"  onchange="reassign()" aria-labelledby="ycoord1" value="200">
       </div>
+      <div>
+        <input type="checkbox" id="f1" oninput="follow('1')">
+        <label for="f1"> Follow this circle (combines with other circles)</label>
+      </div>
   </div>
   <br>
   <div class="flex">
@@ -137,6 +142,10 @@
       <div id="ycoord2">Y Coordinate of Circle 2</div>
       <input type="number" id="y2"  oninput="boundcheck('y','2')"  onchange="reassign()" aria-labelledby="ycoord2" value="200">
     </div>
+    <div>
+      <input type="checkbox" id="f2" oninput="follow('2')">
+      <label for="f2"> Follow this circle (combines with other circles)</label>
+    </div>
   </div>
   <br>
   <div class="flex">
@@ -159,6 +168,10 @@
     <div class="flex1">
       <div id="ycoord3">Y Coordinate of Circle 3</div>
       <input type="number" id="y3"  oninput="boundcheck('y','3')"  onchange="reassign()" aria-labelledby="ycoord3" value="200">
+    </div>
+    <div>
+      <input type="checkbox" id="f3" oninput="follow('3')">
+      <label for="f3"> Follow this circle (combines with other circles)</label>
     </div>
   </div>
   <br id = "brend">

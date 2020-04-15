@@ -3,14 +3,15 @@ var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 var i, j, k = 0;
 var mouse = {x:0,y:0};
-var mean = 0;
+var mean = {x:0, y:0};
 var totalmass = 0;
 var offset = {x:0, y:0};
 var animate = 0;
+var item;
 var circle = [
-  {x:50 , y:200, xdir:   0.184279,ydir:   0.587188,r:10},//r=30 makes for interesting stuff
-  {x:250, y:200, xdir:   0.184279,ydir:   0.587188,r:10},
-  {x:150, y:200, xdir:-2*0.184279,ydir:-2*0.587188,r:10},
+  {x:50 , y:200, xdir:   0.184279,ydir:   0.587188,r:10, f: false},//r=30 makes for interesting stuff
+  {x:250, y:200, xdir:   0.184279,ydir:   0.587188,r:10, f: false},
+  {x:150, y:200, xdir:-2*0.184279,ydir:-2*0.587188,r:10, f: false},
 ];
 
 //BASIC FUNCTIONS//POINTLESS COMMENT
@@ -172,6 +173,12 @@ function addcircle(){
 }
 }
 
+function rmcircle(){
+  circle.pop();
+  animate = 0;
+  draw();
+}
+
 function dircalc(){
   for (i=0; i<circle.length; i++){
     circle[i].x += circle[i].xdir;
@@ -185,30 +192,28 @@ function dircalc(){
       }
     }
   }
-  if (document.getElementById("isFollow").checked){
-    mean = 0;
-    totalmass = 0;
-    for (i=0; i<circle.length; i++){
-      mean +=circle[i].x*Math.pow(circle[i].r,2);
-      totalmass += Math.pow(circle[i].r,2);
-    }
-    for (i=0; i<circle.length; i++){
-      offset.x += mean/totalmass - 200;
-      circle[i].x -= mean/totalmass;
-      circle[i].x += 200;
-    }
-    mean=0
-    for (i=0; i<circle.length; i++){
-      mean +=circle[i].y*Math.pow(circle[i].r,2);
-    }
-    for (i=0; i<circle.length; i++){
-      offset.y += mean/totalmass-200;
-      circle[i].y -= mean/totalmass;
-      circle[i].y += 200;
-    }
+}
 
-
+function follow(number){
+  circle[parseInt(number)].f = !(circle[parseInt(number)].f);
+  mean.x = 0; mean.y = 0; totalmass = 0;
+  for each (item in circle){
+    if (item.f){
+      mean.x +=item.x*Math.pow(item.r,2);
+      mean.y +=item.y*Math.pow(item.r,2);
+      totalmass += Math.pow(item.r,2);
+    }
   }
+  for each (item in circle){
+    offset.x += mean/totalmass - 200;
+    item.x   -= mean/totalmass;
+    item.x   += 200;
+    offset.y += mean/totalmass - 200;
+    item.y   -= mean/totalmass;
+    item.y   += 200;
+  }
+  //animate = 0; NOT SURE
+  draw();
 }
 
 function boundcheck(type,number) {
