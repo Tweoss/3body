@@ -44,7 +44,7 @@ function addcircle(){
     setAttributes(tempel[0], {
       "class": "flex"
     });
-    element.insertAfter(tempel[0],prebreak);
+    insertAfter(tempel[0],prebreak);
   {
     tempel[1] = document.createElement("div");
       setAttributes(tempel[1], {
