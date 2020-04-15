@@ -192,11 +192,6 @@ function dircalc(){
       }
     }
   }
-}
-
-function follow(number){
-  circle[parseInt(number)].f = !(circle[parseInt(number)].f);
-  mean.x = 0; mean.y = 0; totalmass = 0;
   for (item of circle){
     if (item.f){
       mean.x +=item.x*Math.pow(item.r,2);
@@ -210,6 +205,26 @@ function follow(number){
     item.x   += 200;
     offset.y += mean/totalmass - 200;
     item.y   -= mean/totalmass;
+    item.y   += 200;
+  }
+}
+
+function follow(number){
+  circle[parseInt(number)-1].f = !(circle[parseInt(number)-1].f);
+  mean.x = 0; mean.y = 0; totalmass = 0;
+  for (item of circle){
+    if (item.f){
+      mean.x +=item.x*Math.pow(item.r,2);
+      mean.y +=item.y*Math.pow(item.r,2);
+      totalmass += Math.pow(item.r,2);
+    }
+  }
+  for (item of circle){
+    offset.x += mean.x/totalmass - 200;
+    item.x   -= mean.x/totalmass;
+    item.x   += 200;
+    offset.y += mean.y/totalmass - 200;
+    item.y   -= mean.y/totalmass;
     item.y   += 200;
   }
   //animate = 0; NOT SURE
