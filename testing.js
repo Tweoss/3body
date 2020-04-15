@@ -200,7 +200,7 @@ function dircalc(){
     }
   }
 
-  if (weightedmass != 0){
+  if (weightedmass.x != 0 && weightedmass.y != 0){
     offset.x += weightedmass.x/totalmass - 200;
     offset.y += weightedmass.y/totalmass - 200;
     for (item of circle){
