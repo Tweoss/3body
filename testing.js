@@ -25,10 +25,149 @@ function reassign() {
   draw();
 }
 
+function setAttributes(el, attrs) {
+  for(var key in attrs) {
+    el.setAttribute(key, attrs[key]);
+  }
+}
+
 function addcircle(){
   circle.push({x:30, y: 30, xdir: 1, ydir: 1, r:10});
   animate = 0;
   draw();
+  var prebreak = document.getElementById("br" + toString(circle.length-1))
+
+  var tempel[3]//TEMPORARY ELEMNT ARRAY DEPTH OF 3
+
+  tempel[0] = document.createElement("div");
+{
+    setAttributes(tempel[0], {
+      "class": "flex"
+    });
+    element.insertAfter(tempel[0],prebreak);
+  {
+    tempel[1] = document.createElement("div");
+      setAttributes(tempel[1], {
+        "class": "flex1"
+      });
+      tempel[0].appendChild(tempel[1]);
+      {
+      tempel[2] = document.createElement("span");
+        setAttributes(tempel[2], {
+          "id": "radius" + toString(circle.length)
+        });
+        tempel[2].innerHTML = "Radius of Circle " + toString(circle.length);
+        tempel[1].appendChild(tempel[2]);
+
+      tempel[2] = document.createElement("input");
+        setAttribute(tempel[2], {
+          "type": "number",
+          "id": "r" + toString(circle.length + 1),
+          "oninput": "boundcheck('r','" + toString(circle.length) + "')",
+          "onchange": "reassign()",
+          "aria-labelledby": "radius" + toString(circle.length),
+          "value": "10"
+        });
+        tempel[1].appendChild(tempel[2]);
+      }
+    tempel[1] = document.createElement("div")
+      setAttributes(tempel[1],{
+        "class": "flex1"
+      });
+      tempel[0].appendChild(tempel[1]);
+      {
+      tempel[2] = document.createElement("span");
+        setAttributes(tempel[2], {
+          "id": "xdirec" + toString(circle.length)
+        });
+        tempel[2].innerHTML = "X Direction of Circle " + toString(circle.length);
+        tempel[1].appendChild(tempel[2]);
+
+      tempel[2] = document.createElement("input");
+        setAttributes(tempel[2], {
+          "type": "number",
+          "id": "xd" + toString(circle.length + 1),
+          "oninput": "boundcheck('r','" + toString(circle.length) + "')",
+          "onchange": "reassign()",
+          "aria-labelledby": "xdirec" + toString(circle.length),
+          "value": "10"
+        });
+        tempel[1].appendChild(tempel[2]);
+      }
+    tempel[1] = document.createElement("div")
+      setAttributes(tempel[1],{
+        "class": "flex1"
+      });
+      tempel[0].appendChild(tempel[1]);
+      {
+      tempel[2] = document.createElement("span");
+        setAttributes(tempel[2], {
+          "id": "ydirec" + toString(circle.length)
+        });
+        tempel[2].innerHTML = "Y Direction of Circle " + toString(circle.length);
+        tempel[1].appendChild(tempel[2]);
+
+      tempel[2] = document.createElement("input");
+        setAttributes(tempel[2], {
+          "type": "number",
+          "id": "yd" + toString(circle.length + 1),
+          "oninput": "boundcheck('r','" + toString(circle.length) + "')",
+          "onchange": "reassign()",
+          "aria-labelledby": "ydirec" + toString(circle.length),
+          "value": "10"
+        });
+        tempel[1].appendChild(tempel[2]);
+      }
+    tempel[1] = document.createElement("div")
+      setAttributes(tempel[1],{
+        "class": "flex1"
+      });
+      tempel[0].appendChild(tempel[1]);
+      {
+      tempel[2] = document.createElement("span");
+        setAttributes(tempel[2], {
+          "id": "xcoord" + toString(circle.length)
+        });
+        tempel[2].innerHTML = "X Coordinate of Circle " + toString(circle.length);
+        tempel[1].appendChild(tempel[2]);
+
+      tempel[2] = document.createElement("input");
+        setAttributes(tempel[2], {
+          "type": "number",
+          "id": "x" + toString(circle.length + 1),
+          "oninput": "boundcheck('x','" + toString(circle.length) + "')",
+          "onchange": "reassign()",
+          "aria-labelledby": "xcoord1" + toString(circle.length),
+          "value": "10"
+        });
+        tempel[1].appendChild(tempel[2]);
+      }
+    tempel[1] = document.createElement("div")
+      setAttributes(tempel[1],{
+        "class": "flex1"
+      });
+      tempel[0].appendChild(tempel[1]);
+      {
+      tempel[2] = document.createElement("span");
+        setAttributes(tempel[2], {
+          "id": "ycoord" + toString(circle.length)
+        });
+        tempel[2].innerHTML = "Y Coordinate of Circle " + toString(circle.length);
+        tempel[1].appendChild(tempel[2]);
+
+      tempel[2] = document.createElement("input");
+        setAttributes(tempel[2], {
+          "type": "number",
+          "id": "y" + toString(circle.length + 1),
+          "oninput": "boundcheck('y','" + toString(circle.length) + "')",
+          "onchange": "reassign()",
+          "aria-labelledby": "ycoord1" + toString(circle.length),
+          "value": "10"
+        });
+        tempel[1].appendChild(tempel[2]);
+      }
+  }
+}
 }
 
 function dircalc(){
@@ -120,7 +259,7 @@ function circlecol(mousex,mousey,x,y,r){
     return false;
 }
 
-canvas.body.addEventListener("mousedown",function(event){
+canvas.addEventListener("mousedown",function(event){
   mouse.x = event.pageX - canvas.offsetLeft;
   mouse.y = event.pageY - canvas.offsetTop;
   for (i=0; i<circle.length; i++){
@@ -128,7 +267,7 @@ canvas.body.addEventListener("mousedown",function(event){
       ;
     }
   }
-  
+
 });
 
 
