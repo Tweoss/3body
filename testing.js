@@ -62,7 +62,7 @@ function addcircle(){
       tempel[2] = document.createElement("input");
         setAttributes(tempel[2], {
           "type": "number",
-          "id": "r" + toString(circle.length + 1),
+          "id": "r" + circle.length.toString() ,
           "oninput": "boundcheck('r','" + circle.length.toString() + "')",
           "onchange": "reassign()",
           "aria-labelledby": "radius" + circle.length.toString,
@@ -86,7 +86,7 @@ function addcircle(){
       tempel[2] = document.createElement("input");
         setAttributes(tempel[2], {
           "type": "number",
-          "id": "xd" + toString(circle.length + 1),
+          "id": "xd" + circle.length.toString() ,
           "oninput": "boundcheck('r','" + circle.length.toString() + "')",
           "onchange": "reassign()",
           "aria-labelledby": "xdirec" + circle.length.toString,
@@ -110,7 +110,7 @@ function addcircle(){
       tempel[2] = document.createElement("input");
         setAttributes(tempel[2], {
           "type": "number",
-          "id": "yd" + toString(circle.length + 1),
+          "id": "yd" + circle.length.toString() ,
           "oninput": "boundcheck('r','" + circle.length.toString() + "')",
           "onchange": "reassign()",
           "aria-labelledby": "ydirec" + circle.length.toString,
@@ -134,7 +134,7 @@ function addcircle(){
       tempel[2] = document.createElement("input");
         setAttributes(tempel[2], {
           "type": "number",
-          "id": "x" + toString(circle.length + 1),
+          "id": "x" + circle.length.toString() ,
           "oninput": "boundcheck('x','" + circle.length.toString() + "')",
           "onchange": "reassign()",
           "aria-labelledby": "xcoord1" + circle.length.toString,
@@ -158,7 +158,7 @@ function addcircle(){
       tempel[2] = document.createElement("input");
         setAttributes(tempel[2], {
           "type": "number",
-          "id": "y" + toString(circle.length + 1),
+          "id": "y" + circle.length.toString() ,
           "oninput": "boundcheck('y','" + circle.length.toString() + "')",
           "onchange": "reassign()",
           "aria-labelledby": "ycoord1" + circle.length.toString,
