@@ -199,15 +199,16 @@ function dircalc(){
         totalmass += Math.pow(item.r,2);
       }
     }
+    offset.x += mean.x/totalmass - 200;
+    offset.y += mean.y/totalmass - 200;
+    
     for (item of circle){
-      if (item.f){
-        offset.x += mean.x/totalmass - 200;
+      //if (item.f){
         item.x   -= mean.x/totalmass;
-        offset.y += mean.y/totalmass - 200;
         item.y   -= mean.y/totalmass;
         item.x   += 200;
         item.y   += 200;
-    }
+    //}
   }
 
 
@@ -225,14 +226,14 @@ function follow(number){
     }
   }
   for (item of circle){
-    if (item.f){
+    //if (item.f){
       offset.x += mean.x/totalmass - 200;
       item.x   -= mean.x/totalmass;
       offset.y += mean.y/totalmass - 200;
       item.y   -= mean.y/totalmass;
       item.x   += 200;
       item.y   += 200;
-    }
+    //}
   }
 
 
