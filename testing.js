@@ -60,7 +60,7 @@ function addcircle(){
         tempel[1].appendChild(tempel[2]);
 
       tempel[2] = document.createElement("input");
-        setAttribute(tempel[2], {
+        setAttributes(tempel[2], {
           "type": "number",
           "id": "r" + toString(circle.length + 1),
           "oninput": "boundcheck('r','" + toString(circle.length) + "')",
