@@ -191,15 +191,18 @@ function dircalc(){
       totalmass += Math.pow(circle[i].r,2);
     }
     for (i=0; i<circle.length; i++){
-      circle[i].x -= mean/circle[i].length/totalmass;
+      circle[i].x -= mean/circle.length/totalmass;
+      circle[i].x += 200;
     }
     mean=0
     for (i=0; i<circle.length; i++){
       mean +=circle[i].y*Math.pow(circle[i].r,2);
     }
     for (i=0; i<circle.length; i++){
-      circle[i].y -= mean/circle[i].length/totalmass;
+      circle[i].y -= mean/circle.length/totalmass;
+      circle[i].y += 200;
     }
+
 
   }
 }
