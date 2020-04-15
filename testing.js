@@ -226,15 +226,16 @@ function follow(number){
       totalmass += Math.pow(item.r,2);
     }
   }
-  for (item of circle){
-    //if (item.f){
-      offset.x += weightedmass.x/totalmass - 200;
+  if (weightedmass.x != 0 && weightedmass.y != 0){
+    offset.x += weightedmass.x/totalmass - 200;
+    offset.y += weightedmass.y/totalmass - 200;
+
+    for (item of circle){
       item.x   -= weightedmass.x/totalmass;
-      offset.y += weightedmass.y/totalmass - 200;
       item.y   -= weightedmass.y/totalmass;
       item.x   += 200;
       item.y   += 200;
-    //}
+    }
   }
 
 
