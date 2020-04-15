@@ -45,7 +45,8 @@ function addcircle(){
   tempel[0] = document.createElement("div");
 {
     setAttributes(tempel[0], {
-      "class": "flex"
+      "class": "flex",
+      "id": "circ" + circle.length.toString
     });
     body.insertBefore(tempel[0],prebreak);
   {
@@ -175,6 +176,7 @@ function addcircle(){
 
 function rmcircle(){
   circle.pop();
+  remove(getElementById("circ" + toString(circle.length.value+1)));
   animate = 0;
   draw();
 }
@@ -194,26 +196,6 @@ function dircalc(){
   }
 
   follow("nodraw",0);
-  /*for (item of circle){
-    if (item.f){
-      weightedmass.x +=item.x*Math.pow(item.r,2);
-      weightedmass.y +=item.y*Math.pow(item.r,2);
-      totalmass += Math.pow(item.r,2);
-    }
-  }
-
-  if (weightedmass.x != 0 && weightedmass.y != 0){
-    offset.x += weightedmass.x/totalmass - 200;
-    offset.y += weightedmass.y/totalmass - 200;
-    for (item of circle){
-      //if (item.f){
-        item.x   -= weightedmass.x/totalmass;
-        item.y   -= weightedmass.y/totalmass;
-        item.x   += 200;
-        item.y   += 200;
-    }
-  }
-*/
 
 }
 
