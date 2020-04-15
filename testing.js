@@ -4,6 +4,7 @@ var ctx = canvas.getContext("2d");
 var i, j, k = 0;
 var mouse = {x:0,y:0};
 var mean;
+var totalmass;
 var animate = 0;
 var circle = [
   {x:50 , y:200, xdir:   0.184279,ydir:   0.587188,r:10},//r=30 makes for interesting stuff
@@ -185,13 +186,13 @@ function dircalc(){
   }
   if (document.getElementById("isFollow").checked){
     mean = 0;
-    var totalmass = 0;
+    totalmass = 0;
     for (i=0; i<circle.length; i++){
       mean +=circle[i].x*Math.pow(circle[i].r,2);
       totalmass += Math.pow(circle[i].r,2);
     }
     for (i=0; i<circle.length; i++){
-      circle[i].x -= mean/circle.length/totalmass;
+      circle[i].x -= mean/totalmass;
       circle[i].x += 200;
     }
     mean=0
@@ -199,7 +200,7 @@ function dircalc(){
       mean +=circle[i].y*Math.pow(circle[i].r,2);
     }
     for (i=0; i<circle.length; i++){
-      circle[i].y -= mean/circle.length/totalmass;
+      circle[i].y -= mean/totalmass;
       circle[i].y += 200;
     }
 
