@@ -35,7 +35,7 @@ function addcircle(){
   circle.push({x:30, y: 30, xdir: 1, ydir: 1, r:10});
   animate = 0;
   draw();
-  var prebreak = document.getElementById("br" + toString(circle.length-1))
+  var prebreak = document.getElementById("brend")
 
   var tempel = [];//TEMPORARY ELEMNT ARRAY DEPTH OF 3
 
@@ -44,7 +44,7 @@ function addcircle(){
     setAttributes(tempel[0], {
       "class": "flex"
     });
-    tempel[0].insertAfter(prebreak);
+    tempel[0].insertBefore(prebreak);
   {
     tempel[1] = document.createElement("div");
       setAttributes(tempel[1], {
