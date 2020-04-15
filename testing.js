@@ -3,7 +3,7 @@ var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 var i, j, k = 0;
 var mouse = {x:0,y:0};
-var mean = {x:0, y:0};
+var weightedmass = {x:0, y:0};
 var totalmass = 0;
 var offset = {x:0, y:0};
 var animate = 0;
@@ -192,23 +192,24 @@ function dircalc(){
       }
     }
   }
-    for (item of circle){
-      if (item.f){
-        mean.x +=item.x*Math.pow(item.r,2);
-        mean.y +=item.y*Math.pow(item.r,2);
-        totalmass += Math.pow(item.r,2);
-      }
+  for (item of circle){
+    if (item.f){
+      weightedmass.x +=item.x*Math.pow(item.r,2);
+      weightedmass.y +=item.y*Math.pow(item.r,2);
+      totalmass += Math.pow(item.r,2);
     }
-    offset.x += mean.x/totalmass - 200;
-    offset.y += mean.y/totalmass - 200;
-    
+  }
+
+  if (weightedmass != 0){
+    offset.x += weightedmass.x/totalmass - 200;
+    offset.y += weightedmass.y/totalmass - 200;
     for (item of circle){
       //if (item.f){
-        item.x   -= mean.x/totalmass;
-        item.y   -= mean.y/totalmass;
+        item.x   -= weightedmass.x/totalmass;
+        item.y   -= weightedmass.y/totalmass;
         item.x   += 200;
         item.y   += 200;
-    //}
+    }
   }
 
 
@@ -216,21 +217,21 @@ function dircalc(){
 
 function follow(number){
   circle[parseInt(number)-1].f = !(circle[parseInt(number)-1].f);
-  mean.x = 0; mean.y = 0; totalmass = 0;
+  weightedmass.x = 0; weightedmass.y = 0; totalmass = 0;
 
   for (item of circle){
     if (item.f){
-      mean.x +=item.x*Math.pow(item.r,2);
-      mean.y +=item.y*Math.pow(item.r,2);
+      weightedmass.x +=item.x*Math.pow(item.r,2);
+      weightedmass.y +=item.y*Math.pow(item.r,2);
       totalmass += Math.pow(item.r,2);
     }
   }
   for (item of circle){
     //if (item.f){
-      offset.x += mean.x/totalmass - 200;
-      item.x   -= mean.x/totalmass;
-      offset.y += mean.y/totalmass - 200;
-      item.y   -= mean.y/totalmass;
+      offset.x += weightedmass.x/totalmass - 200;
+      item.x   -= weightedmass.x/totalmass;
+      offset.y += weightedmass.y/totalmass - 200;
+      item.y   -= weightedmass.y/totalmass;
       item.x   += 200;
       item.y   += 200;
     //}
