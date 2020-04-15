@@ -203,12 +203,12 @@ function dircalc(){
     if (item.f){
       offset.x += mean.x/totalmass - 200;
       item.x   -= mean.x/totalmass;
-      item.x   += 200;
       offset.y += mean.y/totalmass - 200;
       item.y   -= mean.y/totalmass;
-      item.y   += 200;
     }
   }
+  item.x   += 200;
+  item.y   += 200;
 }
 
 function follow(number){
@@ -224,11 +224,12 @@ function follow(number){
   for (item of circle){
     offset.x += mean.x/totalmass - 200;
     item.x   -= mean.x/totalmass;
-    item.x   += 200;
     offset.y += mean.y/totalmass - 200;
     item.y   -= mean.y/totalmass;
-    item.y   += 200;
   }
+  item.x   += 200;
+  item.y   += 200;
+  
   //animate = 0; NOT SURE
   draw();
 }
