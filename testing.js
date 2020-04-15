@@ -11,7 +11,7 @@ var circle = [
   {x:150, y:200, xdir:-2*0.184279,ydir:-2*0.587188,r:10},
 ];
 
-//BASIC FUNCTIONS
+//BASIC FUNCTIONS//POINTLESS COMMENT
 
 function reassign() {
   for (i=1; i<=circle.length; i++){
