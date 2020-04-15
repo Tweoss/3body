@@ -192,7 +192,9 @@ function dircalc(){
       }
     }
   }
-  for (item of circle){
+
+  follow("null",0);
+  /*for (item of circle){
     if (item.f){
       weightedmass.x +=item.x*Math.pow(item.r,2);
       weightedmass.y +=item.y*Math.pow(item.r,2);
@@ -211,12 +213,14 @@ function dircalc(){
         item.y   += 200;
     }
   }
-
+*/
 
 }
 
-function follow(number){
-  circle[parseInt(number)-1].f = !(circle[parseInt(number)-1].f);
+function follow(number,flip){
+  if (flip){
+    circle[parseInt(number)-1].f = !(circle[parseInt(number)-1].f);
+  }
   weightedmass.x = 0; weightedmass.y = 0; totalmass = 0;
 
   for (item of circle){
