@@ -56,7 +56,7 @@ function addcircle(){
         setAttributes(tempel[2], {
           "id": "radius" + toString(circle.length)
         });
-        tempel[2].innerHTML = "Radius of Circle " + toString(circle.length);
+        tempel[2].innerHTML = "Radius of Circle " + circle.length.toString();
         tempel[1].appendChild(tempel[2]);
 
       tempel[2] = document.createElement("input");
@@ -80,7 +80,7 @@ function addcircle(){
         setAttributes(tempel[2], {
           "id": "xdirec" + toString(circle.length)
         });
-        tempel[2].innerHTML = "X Direction of Circle " + toString(circle.length);
+        tempel[2].innerHTML = "X Direction of Circle " + circle.length.toString();
         tempel[1].appendChild(tempel[2]);
 
       tempel[2] = document.createElement("input");
@@ -104,7 +104,7 @@ function addcircle(){
         setAttributes(tempel[2], {
           "id": "ydirec" + toString(circle.length)
         });
-        tempel[2].innerHTML = "Y Direction of Circle " + toString(circle.length);
+        tempel[2].innerHTML = "Y Direction of Circle " + circle.length.toString();
         tempel[1].appendChild(tempel[2]);
 
       tempel[2] = document.createElement("input");
@@ -128,7 +128,7 @@ function addcircle(){
         setAttributes(tempel[2], {
           "id": "xcoord" + toString(circle.length)
         });
-        tempel[2].innerHTML = "X Coordinate of Circle " + toString(circle.length);
+        tempel[2].innerHTML = "X Coordinate of Circle " + circle.length.toString();
         tempel[1].appendChild(tempel[2]);
 
       tempel[2] = document.createElement("input");
@@ -152,7 +152,7 @@ function addcircle(){
         setAttributes(tempel[2], {
           "id": "ycoord" + toString(circle.length)
         });
-        tempel[2].innerHTML = "Y Coordinate of Circle " + toString(circle.length);
+        tempel[2].innerHTML = "Y Coordinate of Circle " + circle.length.toString();
         tempel[1].appendChild(tempel[2]);
 
       tempel[2] = document.createElement("input");
