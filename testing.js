@@ -183,7 +183,7 @@ function dircalc(){
       }
     }
   }
-  if (document.getElementById("isFollow").value == "on"){
+  if (document.getElementById("isFollow").checked){
     mean = 0;
     var totalmass = 0;
     for (i=0; i<circle.length; i++){
