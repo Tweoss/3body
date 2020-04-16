@@ -320,8 +320,8 @@ function draw(){
   if (document.getElementById("isGrid").checked){
     ctx.beginPath();
     for (i=-1; i<12; i++) {
-      ctx.moveTo(-40,i*40 + offset.y % 40);ctx.lineTo(440,i*40 + offset.y % 40);
-      ctx.moveTo(i*40 + offset.x % 40,-40);ctx.lineTo(i*40 + offset.x % 40,440);
+      ctx.moveTo(-40,i*40 - offset.y % 40);ctx.lineTo(440,i*40 - offset.y % 40);
+      ctx.moveTo(i*40 - offset.x % 40,-40);ctx.lineTo(i*40 - offset.x % 40,440);
       ctx.stroke();
     }
   }
