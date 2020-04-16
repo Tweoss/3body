@@ -46,7 +46,7 @@ function addcircle(){
 {
     setAttributes(tempel[0], {
       "class": "flex",
-      "id": "circ" + circle.length.toString
+      "id": "circ" + circle.length.toString()
     });
     body.insertBefore(tempel[0],prebreak);
   {
@@ -165,9 +165,27 @@ function addcircle(){
           "id": "y" + circle.length.toString() ,
           "oninput": "boundcheck('y','" + circle.length.toString() + "')",
           "onchange": "reassign()",
-          "aria-labelledby": "ycoord1" + circle.length.toString,
+          "aria-labelledby": "ycoord1" + circle.length.toString(),
           "value": "10"
         });
+        tempel[1].appendChild(tempel[2]);
+      }
+    tempel[1] = document.createElement("div")
+      tempel[0].appendChild(tempel[1]);
+      {
+      tempel[2] = document.createElement("input");
+        setAttributes(tempel[2], {
+          "type": "checkbox",
+          "id": "f" + circle.length.toString(),
+          "oninput": "follow('" + circle.length.toString() + "',true)"
+        });
+        tempel[1].appendChild(tempel[2]);
+
+      tempel[2] = document.createElement("label");
+        setAttributes(tempel[2], {
+          "for": "f" + circle.length.toString()
+        });
+        tempel[2].innerHTML = "Y Coordinate of Circle " + circle.length.toString();
         tempel[1].appendChild(tempel[2]);
       }
   }
