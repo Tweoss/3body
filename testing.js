@@ -14,7 +14,7 @@ var circle = [
   {x:150, y:200, xdir:-2*0.184279,ydir:-2*0.587188,r:10, f: false},
 ];
 
-//BASIC FUNCTIONS//POINTLESS COMMENT
+//BASIC FUNCTIONS
 
 function reassign() {
   for (i=1; i<=circle.length; i++){
@@ -35,7 +35,7 @@ function setAttributes(el, attrs) {
 }
 
 function addcircle(){
-  circle.push({x:30, y: 30, xdir: 1, ydir: 1, r:10});
+  circle.push({x:20, y: 20, xdir: 0, ydir: 0, r:10});
   animate = 0;
   draw();
   var prebreak = document.getElementById("brend");
