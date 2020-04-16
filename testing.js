@@ -185,7 +185,7 @@ function addcircle(){
         setAttributes(tempel[2], {
           "for": "f" + circle.length.toString()
         });
-        tempel[2].innerHTML = "Y Coordinate of Circle " + circle.length.toString();
+        tempel[2].innerHTML = "Follow this circle (combines with other circles)" + circle.length.toString();
         tempel[1].appendChild(tempel[2]);
       }
   }
