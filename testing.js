@@ -176,7 +176,7 @@ function addcircle(){
 
 function rmcircle(){
   circle.pop();
-  remove(getElementById("circ" + toString(circle.length.value+1)));
+  document.getElementById("circ" + toString(circle.length.value+1)).remove();
   animate = 0;
   draw();
 }
