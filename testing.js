@@ -335,7 +335,7 @@ canvas.addEventListener("mousedown",function(event){
       offsethandle.y = mouse.y - circle[l].y;
       canvas.addEventListener("mouseup",onMouseUp);
       canvas.addEventListener("mousemove",onMouseMove);
-      l = l-1;
+      l = l+1;
       break;
     }
   }
