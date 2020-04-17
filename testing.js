@@ -316,7 +316,7 @@ function onMouseMove(event){
     document.getElementById("y" +  l.toString()).value = mouse.y - offsethandle.y;
     circle[l-1].x = mouse.x - offsethandle.x;
     circle[l-1].y = mouse.y - offsethandle.y;
-    //reassign();
+    draw();
   }
 }
 
