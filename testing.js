@@ -8,7 +8,7 @@ var totalmass = 0;
 var offsetgrid = {x:0, y:0};
 var offsethandle = {x:0, y:0};
 var animate = 0;
-var isDown = false;
+var isDrag = false
 var item;
 var circle = [
   {x:50 , y:200, xdir:   0.184279,ydir:   0.587188,r:10, f: false},//r=30 makes for interesting stuff
@@ -215,7 +215,7 @@ function dircalc(){
     }
   }
 
-  follow("nodraw",0);
+  follow("nodraw",false);
 
 }
 
@@ -246,7 +246,7 @@ function follow(number,flip){
 
 
   //animate = 0; NOT SURE
-  if (flip){
+  if (flip && animate != 1){
     draw();//so no repeat calling when calls from dircalc
   }
 }
@@ -309,7 +309,7 @@ function circlecol(mousex,mousey,x,y,r){
 }
 
 function onMouseMove(event){
-  if (isDown){
+  if (isDrag){
     mouse.x = event.clientX - canvas.getBoundingClientRect().x;
     mouse.y = event.clientY - canvas.getBoundingClientRect().y;
     document.getElementById("x" +  l.toString()).value = mouse.x - offsethandle.x;
@@ -319,14 +319,14 @@ function onMouseMove(event){
 }
 
 function onMouseUp(event){
-  isDown = false;
+  isDrag = false;
   document.removeEventListener("mouseup",onMouseUp);
   document.removeEventListener("mousemove",onMouseMove);
 }
 
 canvas.addEventListener("mousedown",function(event){
   console.log(event);
-  isDown = true;
+  isDrag = true;
   mouse.x = event.clientX - canvas.getBoundingClientRect().x;
   mouse.y = event.clientY - canvas.getBoundingClientRect().y;
   for (l=0; l<circle.length; l++){
