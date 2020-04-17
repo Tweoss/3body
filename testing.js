@@ -310,8 +310,8 @@ function circlecol(mousex,mousey,x,y,r){
 function onMouseMove(event){
   mouse.x = event.pageX - canvas.offsetLeft;
   mouse.y = event.pageY - canvas.offsetTop;
-  document.getElementById("x" +  i.toString()).value = mouse.x - offset.x;
-  document.getElementById("y" +  i.toString()).value = mouse.y - offset.y;
+  document.getElementById("x" +  i.toString()).value = mouse.x - offsethandle.x;
+  document.getElementById("y" +  i.toString()).value = mouse.y - offsethandle.y;
   reassign();
 }
 
@@ -325,8 +325,8 @@ canvas.addEventListener("mousedown",function(event){
   mouse.y = event.pageY - canvas.offsetTop;
   for (i=0; i<circle.length; i++){
     if(circlecol(mouse.x,mouse.y,circle[i].x,circle[i].y,circle[i].r)){
-      offset.x = mouse.x - circle[i].x;
-      offset.y = mouse.y - circle[i].y;
+      offsethandle.x = mouse.x - circle[i].x;
+      offsethandle.y = mouse.y - circle[i].y;
       canvas.addEventListener("mouseup",onMouseUp);
       canvas.addEventListener("mousemove",onMouseMove);
       break;
