@@ -324,7 +324,6 @@ function onMouseUp(event){
   isDrag = false;
   document.removeEventListener("mouseup",onMouseUp);
   document.removeEventListener("mousemove",onMouseMove);
-  animate = 0;
   draw();
 }
 
@@ -339,6 +338,7 @@ canvas.addEventListener("mousedown",function(event){
       offsethandle.y = mouse.y - circle[l].y;
       canvas.addEventListener("mouseup",onMouseUp);
       canvas.addEventListener("mousemove",onMouseMove);
+      animate = 0;
       l = l+1;
       break;
     }
