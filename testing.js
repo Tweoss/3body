@@ -340,6 +340,7 @@ canvas.addEventListener("mousedown",function(event){
       canvas.addEventListener("mousemove",onMouseMove);
       animate = 0;
       l = l+1;
+      draw();
       break;
     }
   }
