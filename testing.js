@@ -314,7 +314,9 @@ function onMouseMove(event){
     mouse.y = event.clientY - canvas.getBoundingClientRect().y;
     document.getElementById("x" +  l.toString()).value = mouse.x - offsethandle.x;
     document.getElementById("y" +  l.toString()).value = mouse.y - offsethandle.y;
-    reassign();
+    circle[l-1].x = mouse.x - offsethandle.x;
+    circle[l-1].y = mouse.y - offsethandle.y;
+    //reassign();
   }
 }
 
@@ -322,6 +324,8 @@ function onMouseUp(event){
   isDrag = false;
   document.removeEventListener("mouseup",onMouseUp);
   document.removeEventListener("mousemove",onMouseMove);
+  animate = 0;
+  draw();
 }
 
 canvas.addEventListener("mousedown",function(event){
