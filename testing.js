@@ -5,7 +5,8 @@ var i, j, k = 0;
 var mouse = {x:0,y:0};
 var weightedmass = {x:0, y:0};
 var totalmass = 0;
-var offset = {x:0, y:0};
+var offsetgrid = {x:0, y:0};
+var offsethandle = {x:0, y:0};
 var animate = 0;
 var item;
 var circle = [
@@ -231,8 +232,8 @@ function follow(number,flip){
     }
   }
   if (weightedmass.x != 0 && weightedmass.y != 0){
-    offset.x += weightedmass.x/totalmass - 200;
-    offset.y += weightedmass.y/totalmass - 200;
+    offsetgrid.x += weightedmass.x/totalmass - 200;
+    offsetgrid.y += weightedmass.y/totalmass - 200;
 
     for (item of circle){
       item.x   -= weightedmass.x/totalmass;
@@ -306,13 +307,30 @@ function circlecol(mousex,mousey,x,y,r){
     return false;
 }
 
+function onMouseMove(event){
+  mouse.x = event.pageX - canvas.offsetgridLeft;
+  mouse.y = event.pageY - canvas.offsetgridTop;
+  document.getElementById("x" +  i.toString()).value = mouse.x - offset.x;
+  document.getElementById("y" +  i.toString()).value = mouse.y - offset.y;
+  reassign();
+}
+
+function onMouseUp(event){
+  document.removeEventListener("mouseup",onMouseUp);
+  document.removeEventListener("mousemove",onMouseMove);
+}
+
 canvas.addEventListener("mousedown",function(event){
-  mouse.x = event.pageX - canvas.offsetLeft;
-  mouse.y = event.pageY - canvas.offsetTop;
+  mouse.x = event.pageX - canvas.offsetgridLeft;
+  mouse.y = event.pageY - canvas.offsetgridTop;
   for (i=0; i<circle.length; i++){
-    if(circlecol(event.clientX,event.clientY,circle[i].x,circle[i].y,circle[i].r)){
-      ;
+    if(circlecol(mouse.x,mouse.y,circle[i].x,circle[i].y,circle[i].r)){
+      offset.x = mouse.x - circle[i].x;
+      offset.y = mouse.y - circle[i].y;
+      canvas.addEventListener("mouseup",onMouseUp);
+      canvas.addEventListener("mousemove",onMouseMove)
     }
+    break;
   }
 
 });
@@ -338,8 +356,8 @@ function draw(){
   if (document.getElementById("isGrid").checked){
     ctx.beginPath();
     for (i=-1; i<12; i++) {
-      ctx.moveTo(-40,i*40 - offset.y % 40);ctx.lineTo(440,i*40 - offset.y % 40);
-      ctx.moveTo(i*40 - offset.x % 40,-40);ctx.lineTo(i*40 - offset.x % 40,440);
+      ctx.moveTo(-40,i*40 - offsetgrid.y % 40);ctx.lineTo(440,i*40 - offsetgrid.y % 40);
+      ctx.moveTo(i*40 - offsetgrid.x % 40,-40);ctx.lineTo(i*40 - offsetgrid.x % 40,440);
       ctx.stroke();
     }
   }
