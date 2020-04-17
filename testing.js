@@ -360,7 +360,7 @@ function draw(){
   }*/
 
   for (i = 0; i < circle.length; i++) {
-    if (l-1 == i){
+    if (l-1 == i && isDrag){
       ctx.shadowColor = "black";
       ctx.shadowOffsetX = 4;
       ctx.shadowOffsetY = 4;
