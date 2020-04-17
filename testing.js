@@ -328,9 +328,9 @@ canvas.addEventListener("mousedown",function(event){
       offset.x = mouse.x - circle[i].x;
       offset.y = mouse.y - circle[i].y;
       canvas.addEventListener("mouseup",onMouseUp);
-      canvas.addEventListener("mousemove",onMouseMove)
+      canvas.addEventListener("mousemove",onMouseMove);
+      break;
     }
-    break;
   }
 
 });
