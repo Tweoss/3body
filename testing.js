@@ -356,9 +356,19 @@ function draw(){
   }*/
 
   for (i = 0; i < circle.length; i++) {
+    if (l-1 == i){
+      ctx.shadowColor = "black";
+      ctx.shadowOffsetX = 4;
+      ctx.shadowOffsetY = 4;
+      ctx.shadowBlur = 8;
+    }
     ctx.beginPath();
     ctx.arc(circle[i].x, circle[i].y, circle[i].r, 0, 2 * Math.PI);
     ctx.fill();
+    ctx.shadowColor = null;
+    ctx.shadowOffsetX = null;
+    ctx.shadowOffsetY = null;
+    ctx.shadowBlur = null;
   }
   if (document.getElementById("isGrid").checked){
     ctx.beginPath();
