@@ -8,6 +8,7 @@ var totalmass = 0;
 var offsetgrid = {x:0, y:0};
 var offsethandle = {x:0, y:0};
 var animate = 0;
+var isDown = false;
 var item;
 var circle = [
   {x:50 , y:200, xdir:   0.184279,ydir:   0.587188,r:10, f: false},//r=30 makes for interesting stuff
@@ -308,20 +309,24 @@ function circlecol(mousex,mousey,x,y,r){
 }
 
 function onMouseMove(event){
-  mouse.x = event.clientX - canvas.getBoundingClientRect().x;
-  mouse.y = event.clientY - canvas.getBoundingClientRect().y;
-  document.getElementById("x" +  l.toString()).value = mouse.x - offsethandle.x;
-  document.getElementById("y" +  l.toString()).value = mouse.y - offsethandle.y;
-  reassign();
+  if (isDown){
+    mouse.x = event.clientX - canvas.getBoundingClientRect().x;
+    mouse.y = event.clientY - canvas.getBoundingClientRect().y;
+    document.getElementById("x" +  l.toString()).value = mouse.x - offsethandle.x;
+    document.getElementById("y" +  l.toString()).value = mouse.y - offsethandle.y;
+    reassign();
+  }
 }
 
 function onMouseUp(event){
+  isDown = false;
   document.removeEventListener("mouseup",onMouseUp);
   document.removeEventListener("mousemove",onMouseMove);
 }
 
 canvas.addEventListener("mousedown",function(event){
   console.log(event);
+  isDown = true;
   mouse.x = event.clientX - canvas.getBoundingClientRect().x;
   mouse.y = event.clientY - canvas.getBoundingClientRect().y;
   for (l=0; l<circle.length; l++){
@@ -330,6 +335,7 @@ canvas.addEventListener("mousedown",function(event){
       offsethandle.y = mouse.y - circle[l].y;
       canvas.addEventListener("mouseup",onMouseUp);
       canvas.addEventListener("mousemove",onMouseMove);
+      l = l-1;
       break;
     }
   }
