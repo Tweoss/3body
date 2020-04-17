@@ -1,7 +1,7 @@
 
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-var i, j, k = 0;
+var i, j, k,l = 0;
 var mouse = {x:0,y:0};
 var weightedmass = {x:0, y:0};
 var totalmass = 0;
@@ -310,8 +310,8 @@ function circlecol(mousex,mousey,x,y,r){
 function onMouseMove(event){
   mouse.x = event.pageX - canvas.offsetLeft;
   mouse.y = event.pageY - canvas.offsetTop;
-  document.getElementById("x" +  i.toString()).value = mouse.x - offsethandle.x;
-  document.getElementById("y" +  i.toString()).value = mouse.y - offsethandle.y;
+  document.getElementById("x" +  l.toString()).value = mouse.x - offsethandle.x;
+  document.getElementById("y" +  l.toString()).value = mouse.y - offsethandle.y;
   reassign();
 }
 
@@ -321,12 +321,13 @@ function onMouseUp(event){
 }
 
 canvas.addEventListener("mousedown",function(event){
+  console.log(event);
   mouse.x = event.pageX - canvas.offsetLeft;
   mouse.y = event.pageY - canvas.offsetTop;
-  for (i=0; i<circle.length; i++){
-    if(circlecol(mouse.x,mouse.y,circle[i].x,circle[i].y,circle[i].r)){
-      offsethandle.x = mouse.x - circle[i].x;
-      offsethandle.y = mouse.y - circle[i].y;
+  for (l=0; l<circle.length; l++){
+    if(circlecol(mouse.x,mouse.y,circle[l].x,circle[l].y,circle[l].r)){
+      offsethandle.x = mouse.x - circle[l].x;
+      offsethandle.y = mouse.y - circle[l].y;
       canvas.addEventListener("mouseup",onMouseUp);
       canvas.addEventListener("mousemove",onMouseMove);
       break;
